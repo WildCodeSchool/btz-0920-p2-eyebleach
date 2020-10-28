@@ -1,9 +1,14 @@
-import './App.css';
+import Navbar from './Components/Navbar';
+import Burger from './Components/Burger';
+import RightNav from './Components/RightNav';
 
 function App() {
   return (
     <div className="App">
-      <h1> coucou</h1>
+      <Navbar />
+      <Burger />
+      <RightNav />
+      app
     </div>
   );
 }
