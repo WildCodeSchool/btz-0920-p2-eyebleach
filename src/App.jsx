@@ -1,9 +1,10 @@
 import './App.css';
+import BodyHP from './Components/BodyHP';
 
 function App() {
   return (
     <div className="App">
-      <h1> coucou</h1>
+      <BodyHP />
     </div>
   );
 }
