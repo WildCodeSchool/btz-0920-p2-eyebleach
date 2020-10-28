@@ -15,7 +15,7 @@ class PostPageMobile extends Component {
     const { test, name } = this.state;
     return (
       <div>
-        <header>{/* Ici va le composant header de diane */}</header>
+        <header>{/* Ici le composant header de diane */}</header>
         <h1>
           oui ça fonctionne {name} {test}{' '}
         </h1>
