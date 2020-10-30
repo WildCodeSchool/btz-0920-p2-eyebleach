@@ -1,5 +1,6 @@
 import { Component } from 'react';
 
+// eslint-disable-next-line import/no-unresolved
 import PostPageMobilePhoto from './PostPageMobilePhoto';
 
 class PostPageMobile extends Component {

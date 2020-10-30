@@ -1,35 +1,14 @@
-/* import { Component } from 'react';
- */
-import './App.css';
+import Navbar from './Components/Navbar';
 import PostPageMobile from './Components/postPageMobile';
-
-/* class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  PostPageDis() {
-    this.setState(() => {
-      OUIOUItrue; 
-    });  début d'une méthode qui permettrait de changer de page quand on clique sur l'image
-  }
-
-  render() {
-    return (
-      <h1>
-        {' '}
-        coucou
-        <PostPageMobile />
-      </h1>
-    );
-  }
-} */
+import BodyHP from './Components/BodyHP';
 
 function App() {
   return (
-    <body>
+    <div className="App">
+      <Navbar />
+      <BodyHP />
       <PostPageMobile />
-    </body>
+    </div>
   );
 }
 
