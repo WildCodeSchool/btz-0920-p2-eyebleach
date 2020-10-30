@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Ul = styled.ul`
   list-style: none;
@@ -11,7 +12,6 @@ const Ul = styled.ul`
   }
 
   @media (max-width: 768px) {
-    display: none;
     flex-flow: column nowrap;
     background-color: #ffffff;
     position: fixed;
@@ -25,15 +25,19 @@ const Ul = styled.ul`
   }
 `;
 
-const RightNav = () => {
+const RightNav = ({ open }) => {
   return (
-    <Ul>
+    <Ul open={open}>
       <li>Photos</li>
       <li>Vidéos</li>
       <li>Tops</li>
       <li>ViewOnReddit</li>
     </Ul>
   );
+};
+
+RightNav.propTypes = {
+  open: PropTypes.bool.isRequired,
 };
 
 export default RightNav;
