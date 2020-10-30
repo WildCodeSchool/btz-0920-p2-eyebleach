@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { TwitterIcon } from 'react-share';
+/* import { TwitterIcon } from 'react-share'; */
 
 function PostPageMobilePhoto({
   imageToDisplay,
@@ -48,7 +48,7 @@ function PostPageMobilePhoto({
         <img src={imageToDisplay} alt={altForImgToDisplay} />
       </div>
       <div className="titleDesc">{title}</div>
-      <TwitterIcon size={32} round />
+      {/* <TwitterIcon size={32} round /> */}
     </div>
   );
 }
@@ -57,7 +57,7 @@ PostPageMobilePhoto.defaultProps = {
   imageToDisplay:
     'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
   altForImgToDisplay: 'petit chien noir qui regarde à droite',
-  userName: 'DefaultName',
+  userName: 'DefaultUserName',
   title: 'This is not a title from reddit',
 };
 

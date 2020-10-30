@@ -28,11 +28,7 @@ import PostPageMobile from './Components/postPageMobile';
 function App() {
   return (
     <body>
-      <h1>
-        {' '}
-        coucou
-        <PostPageMobile />
-      </h1>
+      <PostPageMobile />
     </body>
   );
 }
