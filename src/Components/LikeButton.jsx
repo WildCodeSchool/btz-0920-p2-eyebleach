@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function LikeButton() {
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(true);
   return (
     <Button color="link" onClick={() => setLiked(!liked)}>
       {liked ? (
