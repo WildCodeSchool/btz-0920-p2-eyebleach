@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // eslint-disable-next-line import/no-unresolved
 import PostPageMobilePhoto from './PostPageMobilePhoto';
