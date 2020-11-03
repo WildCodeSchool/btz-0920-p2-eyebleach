@@ -8,8 +8,8 @@ function LikeButton() {
     <Button color="link" onClick={() => setLiked(!liked)}>
       {liked ? (
         <svg
-          width="1,5em" /* this is the heart icon not fill, add later the ternary to change the state when clicked */
-          height="1,5em"
+          width="1.5em" /* this is the heart icon not fill, add later the ternary to change the state when clicked */
+          height="1.5em"
           viewBox="0 0 16 16"
           className="bi bi-heart"
           fill="currentColor"
@@ -22,8 +22,8 @@ function LikeButton() {
         </svg>
       ) : (
         <svg
-          width="1,5em" /* this is the heart icon but FILLED */
-          height="1,5em"
+          width="1.5em" /* this is the heart icon but FILLED */
+          height="1.5em"
           viewBox="0 0 16 16"
           className="bi bi-heart-fill"
           fill="currentColor"
