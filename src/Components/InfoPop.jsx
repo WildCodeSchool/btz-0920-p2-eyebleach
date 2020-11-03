@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
 import { Button, Popover, PopoverBody } from 'reactstrap';
+import logoReddit from '../logoReddit.png';
 
 function InfoPop({ redditPostURL }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
@@ -10,7 +11,7 @@ function InfoPop({ redditPostURL }) {
   return (
     <div>
       <Button color="info" id="Popover1" type="button">
-        Infos
+        I
       </Button>
       <Popover
         placement="bottom"
@@ -22,7 +23,7 @@ function InfoPop({ redditPostURL }) {
       </Popover>
       <a href={redditPostURL} target="_blank" rel="noopener noreferrer">
         <img
-          src="https://image.flaticon.com/icons/png/512/49/49398.png"
+          src={logoReddit}
           alt="reddit logo to go to the post"
           style={{ width: '50px' }}
         />
