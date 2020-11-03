@@ -1,10 +1,11 @@
-import Navbar from './Components/Navbar';
 import BodyHP from './Components/BodyHP';
+import Main from './Components/Main';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Main />
       <BodyHP />
     </div>
   );
