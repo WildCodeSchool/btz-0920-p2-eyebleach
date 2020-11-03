@@ -1,3 +1,4 @@
+import PostPageMobile from './Components/postPageMobile';
 import BodyHP from './Components/BodyHP';
 import Main from './Components/Main';
 import Navbar from './Navbar';
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Main />
+      <PostPageMobile />
       <BodyHP />
     </div>
   );

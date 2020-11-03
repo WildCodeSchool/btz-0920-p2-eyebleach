@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Component } from 'react';
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
-import './Main.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const apiUrl = 'https://www.reddit.com/r/Eyebleach.json';
 
