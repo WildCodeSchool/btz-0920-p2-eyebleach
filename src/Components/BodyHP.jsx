@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { Component } from 'react';
-import './BodyHp.css';
 
 const apiUrl = 'https://www.reddit.com/r/Eyebleach.json';
 class BodyHP extends Component {
@@ -25,6 +24,7 @@ class BodyHP extends Component {
 
   render() {
     const { posts } = this.state;
+
     return (
       <div>
         {posts.map((post) => (
