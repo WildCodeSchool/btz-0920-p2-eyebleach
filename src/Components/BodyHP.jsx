@@ -25,6 +25,7 @@ class BodyHP extends Component {
 
   render() {
     const { posts } = this.state;
+
     return (
       <div>
         {posts.map((post) => (
