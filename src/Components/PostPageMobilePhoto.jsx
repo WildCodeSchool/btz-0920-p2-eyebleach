@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import LikeButton from './LikeButton';
+import DownloadButton from './DownloadButton';
+
 import 'bootstrap/dist/css/bootstrap.css';
-import DownloadButton from '../DownloadButton';
+import InfoPop from './InfoPop';
 
 function PostPageMobilePhoto({
   imageToDisplay,
@@ -12,9 +14,11 @@ function PostPageMobilePhoto({
 }) {
   return (
     <div className="mainPostPage">
-      <p>{userName}</p>
-      <LikeButton />
-      <DownloadButton imageToDisplay />
+      <div className="userNamePostMob">
+        <p>{userName}</p>
+        <LikeButton />
+        <DownloadButton imageToDisplay={imageToDisplay} />
+      </div>
 
       <div className="photoOrVideo">
         <img src={imageToDisplay} alt={altForImgToDisplay} />
@@ -22,13 +26,7 @@ function PostPageMobilePhoto({
 
       <div className="titleDesc">{title}</div>
       <div className="socialIcons">
-        <a href={redditPostURL} target="_blank" rel="noopener noreferrer">
-          <img
-            src="https://image.flaticon.com/icons/png/512/49/49398.png"
-            alt="reddit logo to go to the post"
-            style={{ width: '50px' }}
-          />
-        </a>
+        <InfoPop redditPostURL={redditPostURL} />
       </div>
     </div>
   );
