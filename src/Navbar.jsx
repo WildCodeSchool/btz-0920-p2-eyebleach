@@ -8,7 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
   Button,
 } from 'reactstrap';
 
@@ -68,12 +67,9 @@ NavbarBrand.propTypes = {
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 };
 
-NavbarText.propTypes = {
-  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-};
-
 NavbarToggler.propTypes = {
   type: PropTypes.string,
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 };
+
 export default App;
