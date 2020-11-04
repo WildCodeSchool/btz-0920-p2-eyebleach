@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Button } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css';
 
 function LikeButton() {
   const [liked, setLiked] = useState(true);

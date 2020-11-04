@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
 import { Button, Popover, PopoverBody } from 'reactstrap';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 function InfoPop({ redditPostURL }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
