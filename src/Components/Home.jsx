@@ -25,10 +25,10 @@ const Home = () => {
           posts.map((post) => {
             return (
               <PostPreview
-                title={post.title}
-                url_overridden_by_dest={post.url_overridden_by_dest}
-                author_fullname={post.author_fullname}
-                key={post.id}
+                title={post.data.title}
+                url_overridden_by_dest={post.data.url_overridden_by_dest}
+                author_fullname={post.data.author_fullname}
+                key={post.data.id}
               />
             );
           })
