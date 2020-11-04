@@ -1,6 +1,5 @@
 import { Button } from 'reactstrap';
 import { propTypes } from 'react-bootstrap/esm/Image';
-import 'bootstrap/dist/css/bootstrap.css';
 
 function DownloadButton({ imageToDisplay }) {
   return (
