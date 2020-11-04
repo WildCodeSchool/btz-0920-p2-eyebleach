@@ -1,13 +1,14 @@
 import PostPageMobile from './Components/postPageMobile';
 import Navbar from './Navbar';
-import Home from './Components/Home';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import BodyHP from './Components/BodyHP';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Home />
+      <BodyHP />
       <PostPageMobile />
     </div>
   );

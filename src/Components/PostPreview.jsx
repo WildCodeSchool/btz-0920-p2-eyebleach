@@ -15,11 +15,17 @@ const PostPreview = ({
   author_fullname,
   id,
 }) => {
+  const isImage = url_overridden_by_dest.split('.').pop() === `jpg`;
   return (
     <Col xs="12" md="6" className="py-1">
       <Card inverse>
         <p>{id}</p>
-        <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+        {isImage ? (
+          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+        ) : (
+          <iframe title={title} src={url_overridden_by_dest} />
+        )}
+        )
         <CardImgOverlay>
           <CardTitle tag="h5">{title}</CardTitle>
           <CardText>
