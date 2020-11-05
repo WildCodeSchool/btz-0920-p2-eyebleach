@@ -3,12 +3,14 @@ import Navigation from '../Components/Navigation';
 
 const TopPage = () => {
   return (
-    <Container>
+    <div>
       <Navigation />
-      <Row>
-        <p>UPVOTE !!!</p>
-      </Row>
-    </Container>
+      <Container>
+        <Row>
+          <p>UPVOTE !!!</p>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

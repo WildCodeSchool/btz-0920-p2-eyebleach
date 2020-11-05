@@ -3,12 +3,14 @@ import Navigation from '../Components/Navigation';
 
 const VideosPage = () => {
   return (
-    <Container>
+    <div>
       <Navigation />
-      <Row>
-        <p>COUCOU !!!</p>
-      </Row>
-    </Container>
+      <Container>
+        <Row>
+          <p>COUCOU !!!</p>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
