@@ -16,8 +16,12 @@ const PostPreview = ({
   id,
 }) => {
   return (
-    <Col xs="12" md="6" className="py-1">
-      <Card inverse>
+    <Col xs="12" md="6" lg="4" className="py-1">
+      <Card
+        inverse
+        className="d-flex justify-content-center"
+        style={{ CardImgOverlay: '#333' }}
+      >
         <p>{id}</p>
         <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
         <CardImgOverlay>

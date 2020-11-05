@@ -25,7 +25,13 @@ const App = () => {
       <Navbar color="light" light expand="sm">
         <NavbarBrand href="#home">
           <a href="/">
-            <img src={logoEyebleach} alt="logo" height="70" />
+            <img
+              className="d-inline"
+              src={logoEyebleach}
+              alt="logo"
+              height="70"
+            />
+            <p className="d-inline d-none d-sm-block">r/eyebleach</p>
           </a>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
