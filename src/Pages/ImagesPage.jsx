@@ -3,12 +3,14 @@ import Navigation from '../Components/Navigation';
 
 const ImagesPage = () => {
   return (
-    <Container>
+    <div>
       <Navigation />
-      <Row>
-        <p>Bonjour !!!</p>
-      </Row>
-    </Container>
+      <Container>
+        <Row>
+          <p>Bonjour !!!</p>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
