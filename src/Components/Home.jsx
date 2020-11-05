@@ -19,16 +19,16 @@ const Home = () => {
       <Row>
         {loading ? (
           <Col className="text-center">
-            <Spinner size="xl" color="warning" />
+            <Spinner size="xl" color="danger" />
           </Col>
         ) : (
           posts.map((post) => {
             return (
               <PostPreview
-                title={post.title}
-                url_overridden_by_dest={post.url_overridden_by_dest}
-                author_fullname={post.author_fullname}
-                key={post.id}
+                title={post.data.title}
+                url_overridden_by_dest={post.data.url_overridden_by_dest}
+                author_fullname={post.data.author_fullname}
+                key={post.data.id}
               />
             );
           })

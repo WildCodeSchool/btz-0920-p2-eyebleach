@@ -8,7 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
   Button,
 } from 'reactstrap';
 
@@ -65,10 +64,6 @@ Navbar.propTypes = {
 };
 
 NavbarBrand.propTypes = {
-  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-};
-
-NavbarText.propTypes = {
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 };
 
