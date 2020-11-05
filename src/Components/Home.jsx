@@ -19,7 +19,7 @@ const Home = () => {
       <Row>
         {loading ? (
           <Col className="text-center">
-            <Spinner size="xl" color="warning" />
+            <Spinner size="xl" color="danger" />
           </Col>
         ) : (
           posts.map((post) => {
