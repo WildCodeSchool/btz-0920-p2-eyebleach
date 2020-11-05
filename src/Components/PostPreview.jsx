@@ -6,7 +6,6 @@ import {
   CardText,
   CardImg,
   CardImgOverlay,
-  Button,
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
@@ -19,19 +18,18 @@ const PostPreview = ({
 }) => {
   return (
     <Col xs="12" md="6" lg="4" className="py-1">
-      <Card inverse className="d-flex justify-content-center">
-        <p>{id}</p>
-        <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
-        <CardImgOverlay>
-          <CardTitle>{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author_fullname}</small>
-          </CardText>
-        </CardImgOverlay>
-        <Button tag={Link} to="/Post">
-          Click me
-        </Button>
-      </Card>
+      <Link to={url_overridden_by_dest}>
+        <Card inverse className="d-flex justify-content-center">
+          <p>{id}</p>
+          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+          <CardImgOverlay>
+            <CardTitle>{title}</CardTitle>
+            <CardText>
+              <small className="text-muted">{author_fullname}</small>
+            </CardText>
+          </CardImgOverlay>
+        </Card>
+      </Link>
     </Col>
   );
 };
