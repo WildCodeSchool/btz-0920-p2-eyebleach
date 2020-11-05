@@ -18,7 +18,7 @@ const PostPreview = ({
 }) => {
   return (
     <Col xs="12" md="6" lg="4" className="py-1">
-      <Link to={url_overridden_by_dest}>
+      <Link to="/Post">
         <Card inverse className="d-flex justify-content-center">
           <p>{id}</p>
           <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
