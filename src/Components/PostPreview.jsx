@@ -23,7 +23,7 @@ const PostPreview = ({
         <p>{id}</p>
         <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
         <CardImgOverlay>
-          <CardTitle tag="h5">{title}</CardTitle>
+          <CardTitle>{title}</CardTitle>
           <CardText>
             <small className="text-muted">{author_fullname}</small>
           </CardText>

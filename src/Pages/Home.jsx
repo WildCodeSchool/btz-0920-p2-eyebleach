@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { Col, Row, Spinner, Container } from 'reactstrap';
 import PostPreview from '../Components/PostPreview';
 import Navigation from '../Components/Navigation';
+import TextWelcome from '../Components/TextWelcome';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -18,6 +19,7 @@ const Home = () => {
   return (
     <div>
       <Navigation />
+      <TextWelcome />
       <Container>
         <Row>
           {loading ? (
