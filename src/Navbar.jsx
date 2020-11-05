@@ -8,7 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
   Button,
 } from 'reactstrap';
 
@@ -25,13 +24,7 @@ const App = () => {
       <Navbar color="light" light expand="sm">
         <NavbarBrand href="#home">
           <a href="/">
-            <img
-              className="d-inline"
-              src={logoEyebleach}
-              alt="logo"
-              height="70"
-            />
-            <p className="d-inline d-none d-sm-block">r/eyebleach</p>
+            <img src={logoEyebleach} alt="logo" height="70" />
           </a>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -71,10 +64,6 @@ Navbar.propTypes = {
 };
 
 NavbarBrand.propTypes = {
-  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-};
-
-NavbarText.propTypes = {
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 };
 
