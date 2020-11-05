@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Col,
   Card,
@@ -5,6 +6,7 @@ import {
   CardText,
   CardImg,
   CardImgOverlay,
+  Button,
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
@@ -26,6 +28,9 @@ const PostPreview = ({
             <small className="text-muted">{author_fullname}</small>
           </CardText>
         </CardImgOverlay>
+        <Button tag={Link} to="/Post">
+          Click me
+        </Button>
       </Card>
     </Col>
   );

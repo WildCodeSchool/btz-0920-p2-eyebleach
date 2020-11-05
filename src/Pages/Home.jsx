@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Col, Row, Spinner, Container } from 'reactstrap';
-import PostPreview from './PostPreview';
+import PostPreview from '../Components/PostPreview';
+import Navigation from '../Components/Navigation';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -16,6 +17,7 @@ const Home = () => {
 
   return (
     <Container>
+      <Navigation />
       <Row>
         {loading ? (
           <Col className="text-center">

@@ -10,10 +10,11 @@ import {
   Button,
 } from 'reactstrap';
 
+import { NavLink as RNV } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import logoEyebleach from './logoEyebleach.png';
+import logoEyebleach from '../Images/logoEyebleach.png';
 
-const App = () => {
+const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -30,13 +31,19 @@ const App = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/Photos/">Photos</NavLink>
+              <NavLink tag={RNV} to="/Photos">
+                Photos
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Vidéos/">Vidéos</NavLink>
+              <NavLink tag={RNV} to="/Vidéos">
+                Vidéos
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Tops/">Tops</NavLink>
+              <NavLink tag={RNV} to="/Tops">
+                Tops
+              </NavLink>
             </NavItem>
           </Nav>
           <Button
@@ -71,4 +78,4 @@ NavbarToggler.propTypes = {
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 };
 
-export default App;
+export default Navigation;
