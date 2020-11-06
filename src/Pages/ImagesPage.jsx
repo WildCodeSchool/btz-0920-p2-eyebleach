@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Col, Row, Spinner, Container } from 'reactstrap';
-import PostPreview from './PostPreview';
+import { Row, Container } from 'reactstrap';
 
-const Home = () => {
+import PostPreview from '../Components/PostPreview';
+import Loader from '../Components/Loader';
+
+const ImagesPage = () => {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
 
@@ -17,11 +19,8 @@ const Home = () => {
   return (
     <Container>
       <Row>
-        {loading ? (
-          <Col className="text-center">
-            <Spinner size="xl" color="warning" />
-          </Col>
-        ) : (
+        {loading && <Loader />}
+        {posts &&
           posts.map((post) => {
             return (
               <PostPreview
@@ -31,11 +30,10 @@ const Home = () => {
                 key={post.data.id}
               />
             );
-          })
-        )}
+          })}
       </Row>
     </Container>
   );
 };
 
-export default Home;
+export default ImagesPage;
