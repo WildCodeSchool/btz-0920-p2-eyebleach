@@ -1,17 +1,13 @@
-import { Container, Row, Col } from 'reactstrap';
+import { Col } from 'reactstrap';
 
 const TextWelcome = () => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <p className="text-center py-4">
-            Hi! Welcome to Eyebleach, the largest online community dedicated to
-            pet lovers
-          </p>
-        </Col>
-      </Row>
-    </Container>
+    <Col xs={12} className="py-5">
+      <p className="text-center">
+        Hi! Welcome to Eyebleach, the largest online community dedicated to pet
+        lovers
+      </p>
+    </Col>
   );
 };
 export default TextWelcome;
