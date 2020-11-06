@@ -9,53 +9,59 @@ import {
   NavLink,
   Button,
 } from 'reactstrap';
-
 import { NavLink as RNV } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import logoEyebleach from '../Images/logoEyebleach.png';
 
 const Navigation = () => {
+  const [navLinks] = useState([
+    {
+      label: 'Photos',
+      link: '/Photos',
+    },
+    {
+      label: 'Vidéos',
+      link: '/Vidéos',
+    },
+    {
+      label: 'Tops',
+      link: '/Tops',
+    },
+  ]);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="sm">
-        <NavbarBrand href="#home">
-          <a href="/">
-            <img src={logoEyebleach} alt="logo" height="70" />
-          </a>
-        </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink tag={RNV} to="/Photos">
-                Photos
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={RNV} to="/Vidéos">
-                Vidéos
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={RNV} to="/Tops">
-                Tops
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <Button
-            color="danger"
-            href="https://www.reddit.com/r/Eyebleach/"
-            target="_blank"
-          >
-            View on Reddit
-          </Button>
-        </Collapse>
-      </Navbar>
-    </div>
+    <Navbar color="light" light expand="sm">
+      <NavbarBrand href="#home">
+        <a href="/">
+          <img src={logoEyebleach} alt="logo" height="70" />
+        </a>
+      </NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="mr-auto" navbar>
+          {navLinks.map((item) => {
+            return (
+              <NavItem key={item.link}>
+                <NavLink tag={RNV} to={item.link}>
+                  {item.label}
+                </NavLink>
+              </NavItem>
+            );
+          })}
+        </Nav>
+        <Button
+          color="danger"
+          href="https://www.reddit.com/r/Eyebleach/"
+          target="_blank"
+        >
+          View on Reddit
+        </Button>
+      </Collapse>
+    </Navbar>
   );
 };
 

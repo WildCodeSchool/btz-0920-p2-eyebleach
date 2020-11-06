@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Popover, PopoverBody } from 'reactstrap';
-import { propTypes } from 'react-bootstrap/esm/Image';
 
 function InfoPop({ redditPostURL }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
@@ -31,11 +31,8 @@ function InfoPop({ redditPostURL }) {
   );
 }
 
-InfoPop.defaultProps = {
-  redditPostURL: 'https://fr.wikipedia.org/wiki/Erreur_HTTP_404',
+InfoPop.propTypes = {
+  redditPostURL: PropTypes.string.isRequired,
 };
 
-InfoPop.propTypes = {
-  redditPostURL: propTypes.string,
-};
 export default InfoPop;

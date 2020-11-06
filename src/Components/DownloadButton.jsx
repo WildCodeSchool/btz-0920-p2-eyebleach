@@ -1,10 +1,9 @@
 import { Button } from 'reactstrap';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import PropTypes from 'prop-types';
 
 function DownloadButton({ imageToDisplay }) {
   return (
     <Button color="link" onClick={imageToDisplay}>
-      {' '}
       {/* do a function to download the img when the button is clicked */}
       <svg
         width="1.5em" /* this is the download icon  */
@@ -33,7 +32,7 @@ DownloadButton.defaultProps = {
 };
 
 DownloadButton.propTypes = {
-  imageToDisplay: propTypes.string,
+  imageToDisplay: PropTypes.string,
 };
 
 export default DownloadButton;
