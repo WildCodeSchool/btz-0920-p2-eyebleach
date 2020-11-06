@@ -1,28 +1,44 @@
-import { Col, Card, CardTitle, CardText, CardImgOverlay } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import {
+  Col,
+  Card,
+  CardTitle,
+  CardText,
+  CardImg,
+  CardImgOverlay,
+} from 'reactstrap';
 
 import PropTypes from 'prop-types';
 
-const PostPreview = ({ title, url, author_fullname }) => {
-  // const isImage = url_overridden_by_dest.split('.').pop() === `jpg`;
+const PostPreview = ({
+  title,
+  url_overridden_by_dest,
+  author_fullname,
+  id,
+}) => {
   return (
-    <Col xs="12" md="6" className="py-1">
-      <Card inverse>
-        <iframe title={title} src={url} />)
-        <CardImgOverlay>
-          <CardTitle tag="h5">{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author_fullname}</small>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
+    <Col xs="12" md="6" lg="4" className="py-1">
+      <Link to="/Post">
+        <Card inverse className="d-flex justify-content-center">
+          <p>{id}</p>
+          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+          <CardImgOverlay>
+            <CardTitle>{title}</CardTitle>
+            <CardText>
+              <small className="text-muted">{author_fullname}</small>
+            </CardText>
+          </CardImgOverlay>
+        </Card>
+      </Link>
     </Col>
   );
 };
 
 PostPreview.propTypes = {
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url_overridden_by_dest: PropTypes.string.isRequired,
   author_fullname: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default PostPreview;
