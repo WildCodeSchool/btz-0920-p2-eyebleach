@@ -33,7 +33,6 @@ const PostPreview = ({
           cursor: 'pointer',
         }}
       >
-        <p>{id}</p>
         <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
         <CardImgOverlay>
           <CardTitle>{title}</CardTitle>
