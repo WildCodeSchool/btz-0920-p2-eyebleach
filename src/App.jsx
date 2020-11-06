@@ -1,15 +1,7 @@
-import PostPageMobile from './Components/postPageMobile';
-import BodyHP from './Components/BodyHP';
-import Navbar from './Navbar';
+import Router from './Components/Router';
 
 function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <PostPageMobile />
-      <BodyHP />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;
