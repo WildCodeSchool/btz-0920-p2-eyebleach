@@ -39,6 +39,7 @@ const PostPreview = ({
           cursor: 'pointer',
         }}
       >
+
         {isVideo && (
           <video controls width="100%" src={preview}>
             <track default kind="captions" />
@@ -47,6 +48,8 @@ const PostPreview = ({
         {!isVideo && (
           <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
         )}
+
+
         <CardImgOverlay>
           <CardTitle>{title}</CardTitle>
           <CardText>
