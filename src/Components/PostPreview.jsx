@@ -26,24 +26,26 @@ const PostPreview = ({
   };
 
   return (
-    <CardColumns className="py-1">
-      <Card
-        inverse
-        className="d-flex justify-content-center"
-        onClick={goToPage}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
-        <CardImgOverlay>
-          <CardTitle>{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author_fullname}</small>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
-    </CardColumns>
+    <div className="container">
+      <CardColumns>
+        <Card
+          inverse
+          className="d-flex justify-content-center"
+          onClick={goToPage}
+          style={{
+            cursor: 'pointer',
+          }}
+        >
+          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+          <CardImgOverlay>
+            <CardTitle>{title}</CardTitle>
+            <CardText>
+              <small className="text-muted">{author_fullname}</small>
+            </CardText>
+          </CardImgOverlay>
+        </Card>
+      </CardColumns>
+    </div>
   );
 };
 
