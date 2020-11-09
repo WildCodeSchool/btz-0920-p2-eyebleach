@@ -1,7 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import {
   Card,
-  CardColumns,
+  Row,
+  Col,
   CardTitle,
   CardText,
   CardImg,
@@ -9,6 +10,7 @@ import {
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 import './PostPreview.css';
 
@@ -18,7 +20,12 @@ const PostPreview = ({
   title,
   url_overridden_by_dest,
   author_fullname,
+  preview,
 }) => {
+  const [isVideo, setIsVideo] = useState(false);
+  useEffect(() => {
+    if (preview) setIsVideo(preview.split('.').pop() === 'mp4');
+  }, [preview]);
   const history = useHistory();
 
   const goToPage = () => {
@@ -26,8 +33,8 @@ const PostPreview = ({
   };
 
   return (
-    <div className="container">
-      <CardColumns>
+    <Row>
+      <Col className="py-1">
         <Card
           inverse
           className="d-flex justify-content-center"
@@ -36,7 +43,15 @@ const PostPreview = ({
             cursor: 'pointer',
           }}
         >
-          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+          {isVideo && (
+            <video controls width="100%" src={preview}>
+              <track default kind="captions" />
+            </video>
+          )}
+          {!isVideo && (
+            <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+          )}
+
           <CardImgOverlay>
             <CardTitle>{title}</CardTitle>
             <CardText>
@@ -44,8 +59,8 @@ const PostPreview = ({
             </CardText>
           </CardImgOverlay>
         </Card>
-      </CardColumns>
-    </div>
+      </Col>
+    </Row>
   );
 };
 
@@ -55,6 +70,7 @@ PostPreview.propTypes = {
   author_fullname: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
+  preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
 };
 
 export default PostPreview;

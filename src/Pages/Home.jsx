@@ -29,8 +29,8 @@ const Home = () => {
           posts.map((post) => {
             // console.log(post.data.permalink.split('/'));
             return (
-              <Row className="py-1">
-                <Col md="4" lg="3">
+              <Row>
+                <Col md="10" lg="3" className="py-1">
                   <PostPreview
                     id={post.data.permalink.split('/')[4]}
                     slugTitle={post.data.permalink.split('/')[5]}

@@ -14,3 +14,6 @@ CardColumns {
   display: block;
   color: black;
 }
+.Card:hover {
+  color: black;
+}
