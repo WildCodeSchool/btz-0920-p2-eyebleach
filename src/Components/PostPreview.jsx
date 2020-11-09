@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import {
-  Col,
   Card,
+  CardColumns,
   CardTitle,
   CardText,
   CardImg,
@@ -9,6 +9,8 @@ import {
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
+
+import './PostPreview.css';
 
 const PostPreview = ({
   id,
@@ -24,7 +26,7 @@ const PostPreview = ({
   };
 
   return (
-    <Col xs="12" md="6" lg="4" className="py-1">
+    <CardColumns className="py-1">
       <Card
         inverse
         className="d-flex justify-content-center"
@@ -41,7 +43,7 @@ const PostPreview = ({
           </CardText>
         </CardImgOverlay>
       </Card>
-    </Col>
+    </CardColumns>
   );
 };
 

@@ -1,0 +1,8 @@
+.hidetxt {
+  display: none;
+}
+
+.CardImg:hover + .hide {
+  display: block;
+  color: black;
+}
