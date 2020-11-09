@@ -26,7 +26,6 @@ const Home = () => {
 
           {posts &&
             posts.map((post) => {
-              // console.log(post.data.permalink.split('/'));
               return (
                 <PostPreview
                   id={post.data.permalink.split('/')[4]}
@@ -35,6 +34,11 @@ const Home = () => {
                   url_overridden_by_dest={post.data.url_overridden_by_dest}
                   author_fullname={post.data.author_fullname}
                   key={post.data.id}
+                  preview={
+                    // post.data.preview &&
+                    // post.data.preview.reddit_video_preview &&
+                    post.data.preview?.reddit_video_preview?.fallback_url
+                  }
                 />
               );
             })}
