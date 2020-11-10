@@ -1,7 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import {
-  Col,
   Card,
+  Row,
+  Col,
   CardTitle,
   CardText,
   CardImg,
@@ -10,6 +11,8 @@ import {
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+
+import './PostPreview.css';
 
 const PostPreview = ({
   id,
@@ -30,32 +33,34 @@ const PostPreview = ({
   };
 
   return (
-    <Col xs="12" md="6" lg="4" className="py-1">
-      <Card
-        inverse
-        className="d-flex justify-content-center"
-        onClick={goToPage}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        {isVideo && (
-          <video controls width="100%" src={preview}>
-            <track default kind="captions" />
-          </video>
-        )}
-        {!isVideo && (
-          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
-        )}
+    <Row>
+      <Col xs="12" sm="8" lg="6">
+        <Card
+          inverse
+          className="d-flex justify-content-center"
+          onClick={goToPage}
+          style={{
+            cursor: 'pointer',
+          }}
+        >
+          {isVideo && (
+            <video controls width="100%" src={preview}>
+              <track default kind="captions" />
+            </video>
+          )}
+          {!isVideo && (
+            <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+          )}
 
-        <CardImgOverlay>
-          <CardTitle>{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author_fullname}</small>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
-    </Col>
+          <CardImgOverlay>
+            <CardTitle>{title}</CardTitle>
+            <CardText>
+              <small className="text-muted">{author_fullname}</small>
+            </CardText>
+          </CardImgOverlay>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

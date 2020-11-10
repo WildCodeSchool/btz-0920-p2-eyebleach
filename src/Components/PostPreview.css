@@ -1,0 +1,19 @@
+CardColumns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hidetxt {
+  display: none;
+}
+
+.CardImg:hover + .hide {
+  display: block;
+  color: black;
+}
+.Card:hover {
+  color: black;
+}
