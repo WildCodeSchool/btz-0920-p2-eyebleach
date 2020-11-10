@@ -34,7 +34,7 @@ const PostPreview = ({
 
   return (
     <Row>
-      <Col className="py-1">
+      <Col xs="12" sm="8" lg="6">
         <Card
           inverse
           className="d-flex justify-content-center"
