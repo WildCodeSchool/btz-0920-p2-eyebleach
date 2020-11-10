@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import {
-  Col,
   Card,
+  Col,
   CardTitle,
   CardText,
   CardImg,
@@ -47,15 +47,14 @@ const PostPreview = ({
         {!isVideo && (
           <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
         )}
-
-        <CardImgOverlay>
-          <CardTitle>{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author_fullname}</small>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
-    </Col>
+          <CardImgOverlay>
+            <CardTitle>{title}</CardTitle>
+            <CardText>
+              <small className="text-muted">{author_fullname}</small>
+            </CardText>
+          </CardImgOverlay>
+        </Card>
+      </Col>
   );
 };
 
