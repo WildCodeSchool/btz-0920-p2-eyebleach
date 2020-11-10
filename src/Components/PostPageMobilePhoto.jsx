@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import LikeButton from './LikeButton';
 import DownloadButton from './DownloadButton';
@@ -23,7 +24,6 @@ function PostPageMobilePhoto({
       <div className="photoOrVideo">
         <img src={imageToDisplay} alt={altForImgToDisplay} />
       </div>
-
       <div className="titleDesc">{title}</div>
       <div className="socialIcons">
         <InfoPop redditPostURL={redditPostURL} />
