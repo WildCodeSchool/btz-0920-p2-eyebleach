@@ -1,39 +1,62 @@
+import { useHistory } from 'react-router-dom';
+import {
+  Col,
+  Card,
+  CardTitle,
+  CardText,
+  CardImg,
+  CardImgOverlay,
+} from 'reactstrap';
+
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import Axios from 'axios';
-import { Row, Container } from 'reactstrap';
 
-import PostPreview from '../Components/PostPreview';
-import Loader from '../Components/Loader';
-
-const ImagesPage = () => {
-  const [loading, setLoading] = useState(true);
-  const [posts, setPosts] = useState([]);
+const ImagesPage = ({ title, url_overridden_by_dest, author_fullname }) => {
+  const [isImage, setIsImage] = useState([]);
 
   useEffect(() => {
-    Axios.get('https://www.reddit.com/r/Eyebleach.json').then((res) => {
-      setPosts(res.data.data.children);
-      setLoading(false);
-    });
-  }, []);
+    setIsImage(url_overridden_by_dest.split('.').pop() !== 'preview');
+  }, [url_overridden_by_dest]);
+
+  const history = useHistory();
+
+  const goToPage = () => {
+    history.push(`/Photos`);
+  };
 
   return (
-    <Container>
-      <Row>
-        {loading && <Loader />}
-        {posts &&
-          posts.map((post) => {
-            return (
-              <PostPreview
-                title={post.data.title}
-                url_overridden_by_dest={post.data.url_overridden_by_dest}
-                author_fullname={post.data.author_fullname}
-                key={post.data.id}
-              />
-            );
-          })}
-      </Row>
-    </Container>
+    <Col xs="12" md="6" lg="4" className="py-1">
+      <Card
+        inverse
+        className="d-flex justify-content-center"
+        onClick={goToPage}
+        style={{
+          cursor: 'pointer',
+        }}
+      >
+        {isImage && (
+          <CardImg
+            controls
+            width="100%"
+            src={url_overridden_by_dest}
+            alt={title}
+          />
+        )}
+        <CardImgOverlay>
+          <CardTitle>{title}</CardTitle>
+          <CardText>
+            <small className="text-muted">{author_fullname}</small>
+          </CardText>
+        </CardImgOverlay>
+      </Card>
+    </Col>
   );
+};
+
+ImagesPage.propTypes = {
+  title: PropTypes.string.isRequired,
+  url_overridden_by_dest: PropTypes.string.isRequired,
+  author_fullname: PropTypes.string.isRequired,
 };
 
 export default ImagesPage;

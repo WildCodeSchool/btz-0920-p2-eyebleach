@@ -9,6 +9,7 @@ import {
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 const PostPreview = ({
   id,
@@ -16,7 +17,12 @@ const PostPreview = ({
   title,
   url_overridden_by_dest,
   author_fullname,
+  preview,
 }) => {
+  const [isVideo, setIsVideo] = useState(false);
+  useEffect(() => {
+    if (preview) setIsVideo(preview.split('.').pop() === 'mp4');
+  }, [preview]);
   const history = useHistory();
 
   const goToPage = () => {
@@ -33,7 +39,15 @@ const PostPreview = ({
           cursor: 'pointer',
         }}
       >
-        <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+        {isVideo && (
+          <video controls width="100%" src={preview}>
+            <track default kind="captions" />
+          </video>
+        )}
+        {!isVideo && (
+          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+        )}
+
         <CardImgOverlay>
           <CardTitle>{title}</CardTitle>
           <CardText>
@@ -51,6 +65,7 @@ PostPreview.propTypes = {
   author_fullname: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
+  preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
 };
 
 export default PostPreview;
