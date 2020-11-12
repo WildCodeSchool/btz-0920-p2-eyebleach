@@ -2,8 +2,6 @@
 import PropTypes from 'prop-types';
 import LikeButton from './LikeButton';
 import DownloadButton from './DownloadButton';
-
-import 'bootstrap/dist/css/bootstrap.css';
 import InfoPop from './InfoPop';
 
 function PostPageMobilePhoto({
