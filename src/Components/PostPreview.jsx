@@ -9,9 +9,9 @@ import './PostPreview.css';
 const PostPreview = ({
   id,
   slugTitle,
-  author_fullname,
   title,
   url_overridden_by_dest,
+  author,
   preview,
 }) => {
   const [isVideo, setIsVideo] = useState(false);
@@ -43,7 +43,7 @@ const PostPreview = ({
       )}
       <CardImgOverlay className="hideinfos d-flex justify-content-end">
         <CardText>
-          <small className="text-left">{author_fullname}</small>
+          <small className="text-left">{author}</small>
         </CardText>
       </CardImgOverlay>
     </Card>
@@ -53,7 +53,7 @@ const PostPreview = ({
 PostPreview.propTypes = {
   title: PropTypes.string.isRequired,
   url_overridden_by_dest: PropTypes.string.isRequired,
-  author_fullname: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
   preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
