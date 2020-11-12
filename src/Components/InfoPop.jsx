@@ -7,7 +7,6 @@ function InfoPop({ redditPostURL }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   const toggle = () => setPopoverOpen(!popoverOpen);
-
   return (
     <div>
       <Button color="info" id="Popover1" type="button">
@@ -21,7 +20,11 @@ function InfoPop({ redditPostURL }) {
       >
         <PopoverBody>Here goes the numbers of comments and upvotes</PopoverBody>
       </Popover>
-      <a href={redditPostURL} target="_blank" rel="noopener noreferrer">
+      <a
+        href={`https://www.reddit.com${redditPostURL}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
           src={logoReddit}
           alt="reddit logo to go to the post"
