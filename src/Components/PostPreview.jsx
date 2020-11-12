@@ -41,10 +41,10 @@ const PostPreview = ({
       {!isVideo && (
         <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
-      <CardImgOverlay>
-        <CardTitle className="hideinfos">{title}</CardTitle>
+      <CardImgOverlay className="hideinfos">
+        <CardTitle>{title}</CardTitle>
         <CardText>
-          <small className="hideinfos text-muted">{author_fullname}</small>
+          <small className="text-muted">{author_fullname}</small>
         </CardText>
       </CardImgOverlay>
     </Card>

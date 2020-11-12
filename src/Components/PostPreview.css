@@ -1,8 +1,10 @@
-.imagecard {
-  opacity: 1;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+.hideinfos {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.8s;
+  font-size: 36px;
+  color: #fff;
 }
-.imagecard:hover {
-  opacity: 0.5;
+.hideinfos:hover {
+  opacity: 1;
 }
