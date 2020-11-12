@@ -15,11 +15,12 @@ const postPageMobile = (props) => {
     Axios.get(
       `https://www.reddit.com/r/Eyebleach/comments/${id}/${title}.json`
     ).then((res) => {
-      setPosts(res.data[0].data.children[0]);
+      setPosts(res.data[0].data.children[0].data);
+      console.log(res.data[0].data.children[0].data);
       setLoading(false);
     });
   }, []);
-  console.log(posts, 'this is outside use effect');
+  /* console.log(posts, 'this is outside use effect'); */
 
   return (
     <div>
@@ -28,10 +29,10 @@ const postPageMobile = (props) => {
       {posts && (
         <PostPageMobilePhoto
           title={posts.title}
-          imageToDisplay={posts.data.url_overridden_by_dest}
-          altForImgToDisplay={posts.data.title}
-          userName={posts.data.author}
-          redditPostURL={posts.data.title}
+          imageToDisplay={posts.url_overridden_by_dest}
+          altForImgToDisplay={posts.title}
+          userName={posts.author}
+          redditPostURL={posts.title}
         />
       )}
     </div>
