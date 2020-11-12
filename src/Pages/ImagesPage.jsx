@@ -1,65 +1,53 @@
-import { useHistory } from 'react-router-dom';
-import {
-  Col,
-  Card,
-  CardTitle,
-  CardText,
-  CardImg,
-  CardImgOverlay,
-} from 'reactstrap';
-
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import Axios from 'axios';
+import { Row, Container } from 'reactstrap';
 
-const ImagesPage = ({ title, url_overridden_by_dest, author }) => {
-  const [isImage, setIsImage] = useState([]);
+import Loader from '../Components/Loader';
+import TextWelcome from '../Components/TextWelcome';
+import PostImage from '../Components/PostImage';
+
+const ImagesPage = () => {
+  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    setIsImage(
-      url_overridden_by_dest.split('.').pop() === 'png' ||
-        url_overridden_by_dest.split('.').pop() === 'jpg'
-    );
-  }, [url_overridden_by_dest]);
-
-  const history = useHistory();
-
-  const goToPage = () => {
-    history.push(`/Photos`);
-  };
+    Axios.get('https://www.reddit.com/r/Eyebleach.json').then((res) => {
+      setPosts(res.data.data.children);
+      setLoading(false);
+    });
+  }, []);
 
   return (
-    <Col xs="12" md="6" lg="4" className="py-1">
-      <Card
-        inverse
-        className="d-flex justify-content-center"
-        onClick={goToPage}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        {isImage && (
-          <CardImg
-            controls
-            width="100%"
-            src={url_overridden_by_dest}
-            alt={title}
-          />
-        )}
-        <CardImgOverlay>
-          <CardTitle>{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author}</small>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
-    </Col>
-  );
-};
+    <div>
+      <Container>
+        <Row>
+          <TextWelcome />
+          {loading && <Loader />}
 
-ImagesPage.propTypes = {
-  title: PropTypes.string.isRequired,
-  url_overridden_by_dest: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+          {posts &&
+            posts
+              .filter(
+                (post) =>
+                  post.data.url_overridden_by_dest?.split('.').pop() ===
+                    'png' ||
+                  post.data.url_overridden_by_dest?.split('.').pop() === 'jpg'
+              )
+              .map((post) => {
+                return (
+                  <PostImage
+                    id={post.data.permalink.split('/')[4]}
+                    slugTitle={post.data.permalink.split('/')[5]}
+                    title={post.data.title}
+                    url_overridden_by_dest={post.data.url_overridden_by_dest}
+                    author_fullname={post.data.author}
+                    key={post.data.id}
+                  />
+                );
+              })}
+        </Row>
+      </Container>
+    </div>
+  );
 };
 
 export default ImagesPage;

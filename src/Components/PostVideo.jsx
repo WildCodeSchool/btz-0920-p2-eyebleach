@@ -1,22 +1,15 @@
 import { useHistory } from 'react-router-dom';
-import {
-  Card,
-  Col,
-  CardTitle,
-  CardText,
-  CardImg,
-  CardImgOverlay,
-} from 'reactstrap';
+import { Card, Col, CardTitle, CardText, CardImgOverlay } from 'reactstrap';
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const PostPreview = ({
+const PostVideo = ({
   id,
   slugTitle,
   title,
-  url_overridden_by_dest,
-  author,
+  // url_overridden_by_dest,
+  author_fullname,
   preview,
 }) => {
   const [isVideo, setIsVideo] = useState(false);
@@ -44,13 +37,11 @@ const PostPreview = ({
             <track default kind="captions" />
           </video>
         )}
-        {!isVideo && (
-          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
-        )}
+
         <CardImgOverlay>
           <CardTitle>{title}</CardTitle>
           <CardText>
-            <small className="text-muted">{author}</small>
+            <small className="text-muted">{author_fullname}</small>
           </CardText>
         </CardImgOverlay>
       </Card>
@@ -58,13 +49,17 @@ const PostPreview = ({
   );
 };
 
-PostPreview.propTypes = {
+PostVideo.propTypes = {
   title: PropTypes.string.isRequired,
-  url_overridden_by_dest: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  // url_overridden_by_dest: PropTypes.string.isRequired,
+  author_fullname: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
   preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
 };
 
-export default PostPreview;
+export default PostVideo;
+
+/* {!isVideo && (
+    <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
+  )} */
