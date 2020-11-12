@@ -16,7 +16,7 @@ const PostPreview = ({
   slugTitle,
   title,
   url_overridden_by_dest,
-  author_fullname,
+  author,
   preview,
 }) => {
   const [isVideo, setIsVideo] = useState(false);
@@ -51,7 +51,7 @@ const PostPreview = ({
         <CardImgOverlay>
           <CardTitle>{title}</CardTitle>
           <CardText>
-            <small className="text-muted">{author_fullname}</small>
+            <small className="text-muted">{author}</small>
           </CardText>
         </CardImgOverlay>
       </Card>
@@ -62,7 +62,7 @@ const PostPreview = ({
 PostPreview.propTypes = {
   title: PropTypes.string.isRequired,
   url_overridden_by_dest: PropTypes.string.isRequired,
-  author_fullname: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
   preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
