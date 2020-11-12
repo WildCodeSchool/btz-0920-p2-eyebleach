@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import { Card, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
@@ -9,9 +9,9 @@ import './PostPreview.css';
 const PostPreview = ({
   id,
   slugTitle,
+  author_fullname,
   title,
   url_overridden_by_dest,
-  author_fullname,
   preview,
 }) => {
   const [isVideo, setIsVideo] = useState(false);
@@ -41,10 +41,9 @@ const PostPreview = ({
       {!isVideo && (
         <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
-      <CardImgOverlay className="hideinfos">
-        <CardTitle>{title}</CardTitle>
+      <CardImgOverlay className="hideinfos d-flex justify-content-end">
         <CardText>
-          <small className="text-muted">{author_fullname}</small>
+          <small className="text-left">{author_fullname}</small>
         </CardText>
       </CardImgOverlay>
     </Card>
