@@ -27,7 +27,7 @@ const PostPreview = ({
   return (
     <Card
       inverse
-      className="d-flex justify-content-center"
+      className="imagecard d-flex justify-content-center"
       onClick={goToPage}
       style={{
         cursor: 'pointer',
@@ -39,18 +39,12 @@ const PostPreview = ({
         </video>
       )}
       {!isVideo && (
-        <CardImg
-          className="imagecard"
-          top
-          width="100%"
-          src={url_overridden_by_dest}
-          alt={title}
-        />
+        <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
       <CardImgOverlay>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="hideinfos">{title}</CardTitle>
         <CardText>
-          <small className="text-muted">{author_fullname}</small>
+          <small className="hideinfos text-muted">{author_fullname}</small>
         </CardText>
       </CardImgOverlay>
     </Card>
