@@ -3,7 +3,6 @@ import Axios from 'axios';
 import { Row, Container } from 'reactstrap';
 
 import Loader from '../Components/Loader';
-import TextWelcome from '../Components/TextWelcome';
 import PostImage from '../Components/PostImage';
 
 const ImagesPage = () => {
@@ -21,7 +20,6 @@ const ImagesPage = () => {
     <div>
       <Container>
         <Row>
-          <TextWelcome />
           {loading && <Loader />}
 
           {posts &&

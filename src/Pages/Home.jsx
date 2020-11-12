@@ -42,7 +42,7 @@ const Home = () => {
                         url_overridden_by_dest={
                           post.data.url_overridden_by_dest
                         }
-                        author_fullname={post.data.author_fullname}
+                        author={post.data.author}
                         key={post.data.id}
                         preview={
                           // post.data.preview &&
