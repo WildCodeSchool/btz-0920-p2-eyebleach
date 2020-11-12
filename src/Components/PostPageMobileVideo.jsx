@@ -6,38 +6,38 @@ import InfoPop from './InfoPop';
 
 function PostPageMobileVideo({
   videoToDisplay,
-  altForImgToDisplay,
   userName,
   title,
   redditPostURL,
+  comments,
 }) {
   return (
     <div className="mainPostPage">
       <div className="userNamePostMob">
         <p>{userName}</p>
         <LikeButton />
-        <DownloadButton imageToDisplay={videoToDisplay} />
+        <DownloadButton contentToDL={videoToDisplay} />
       </div>
 
-      <div className="photoOrVideo">
+      <div className="videoDiv">
         <video autoPlay="true" loop width="100%" src={videoToDisplay}>
           <track default kind="captions" />
         </video>
       </div>
       <div className="titleDesc">{title}</div>
       <div className="socialIcons">
-        <InfoPop redditPostURL={redditPostURL} />
+        <InfoPop comments={comments} redditPostURL={redditPostURL} />
       </div>
     </div>
   );
 }
 
 PostPageMobileVideo.propTypes = {
-  altForImgToDisplay: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   redditPostURL: PropTypes.string.isRequired,
   videoToDisplay: PropTypes.string.isRequired,
+  comments: PropTypes.number.isRequired,
 };
 
 export default PostPageMobileVideo;

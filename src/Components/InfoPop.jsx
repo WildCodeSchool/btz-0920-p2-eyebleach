@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Popover, PopoverBody } from 'reactstrap';
 import logoReddit from '../logoReddit.png';
 
-function InfoPop({ redditPostURL }) {
+function InfoPop({ redditPostURL, comments }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   const toggle = () => setPopoverOpen(!popoverOpen);
@@ -18,7 +18,7 @@ function InfoPop({ redditPostURL }) {
         target="Popover1"
         toggle={toggle}
       >
-        <PopoverBody>Here goes the numbers of comments and upvotes</PopoverBody>
+        <PopoverBody>{comments} comments on this post</PopoverBody>
       </Popover>
       <a
         href={`https://www.reddit.com${redditPostURL}`}
@@ -37,6 +37,7 @@ function InfoPop({ redditPostURL }) {
 
 InfoPop.propTypes = {
   redditPostURL: PropTypes.string.isRequired,
+  comments: PropTypes.number.isRequired,
 };
 
 export default InfoPop;

@@ -35,9 +35,9 @@ const postPageMobile = (props) => {
           <PostPageMobileVideo
             title={posts.title}
             videoToDisplay={posts.preview.reddit_video_preview.fallback_url}
-            altForImgToDisplay={posts.title}
             userName={posts.author}
             redditPostURL={posts.permalink}
+            comments={posts.num_comments}
           />
         ) : (
           <PostPageMobilePhoto
@@ -46,6 +46,7 @@ const postPageMobile = (props) => {
             altForImgToDisplay={posts.title}
             userName={posts.author}
             redditPostURL={posts.permalink}
+            comments={posts.num_comments}
           />
         ))}
     </div>

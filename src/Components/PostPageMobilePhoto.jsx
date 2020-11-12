@@ -10,21 +10,22 @@ function PostPageMobilePhoto({
   userName,
   title,
   redditPostURL,
+  comments,
 }) {
   return (
     <div className="mainPostPage">
       <div className="userNamePostMob">
         <p>{userName}</p>
         <LikeButton />
-        <DownloadButton imageToDisplay={imageToDisplay} />
+        <DownloadButton contentToDL={imageToDisplay} />
       </div>
 
-      <div className="photoOrVideo">
+      <div className="photoDiv">
         <img src={imageToDisplay} alt={altForImgToDisplay} />
       </div>
       <div className="titleDesc">{title}</div>
       <div className="socialIcons">
-        <InfoPop redditPostURL={redditPostURL} />
+        <InfoPop comments={comments} redditPostURL={redditPostURL} />
       </div>
     </div>
   );
@@ -45,6 +46,7 @@ PostPageMobilePhoto.propTypes = {
   userName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   redditPostURL: PropTypes.string.isRequired,
+  comments: PropTypes.number.isRequired,
 };
 
 export default PostPageMobilePhoto;
