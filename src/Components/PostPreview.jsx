@@ -27,7 +27,6 @@ const PostPreview = ({
   return (
     <Card
       inverse
-      className="imagecard d-flex justify-content-center"
       onClick={goToPage}
       style={{
         cursor: 'pointer',
