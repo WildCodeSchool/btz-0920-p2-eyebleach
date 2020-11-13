@@ -24,7 +24,7 @@ const Home = () => {
       <Row>
         <TextWelcome className="text-responsive cuteKitten" />
       </Row>
-      <Row className="d-flex justify-content-center">
+      <Row className="d-flex justify-content-center px-2-sm">
         <CardColumns className="cardscolumslayout">
           {loading && <Loader />}
 

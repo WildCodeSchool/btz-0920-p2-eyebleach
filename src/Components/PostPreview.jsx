@@ -3,6 +3,8 @@ import { Card, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { VscAccount } from 'react-icons/vsc';
+import { BsHeart } from 'react-icons/bs';
 
 import './PostPreview.css';
 
@@ -40,9 +42,13 @@ const PostPreview = ({
       {!isVideo && (
         <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
-      <CardImgOverlay className="hideinfos d-flex justify-content-end">
+      <CardImgOverlay className="hideinfos d-inline-flex align-items-end justify-content-between">
         <CardText>
-          <small className="text-left">{author}</small>
+          <VscAccount size={18} />
+          {author}
+        </CardText>
+        <CardText>
+          <BsHeart size={18} />
         </CardText>
       </CardImgOverlay>
     </Card>
