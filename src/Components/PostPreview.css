@@ -1,0 +1,10 @@
+.hideinfos {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.8s;
+  font-size: 16px;
+  color: #e8e8e8;
+}
+.hideinfos:hover {
+  opacity: 1;
+}

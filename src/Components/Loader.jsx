@@ -1,11 +1,7 @@
-import { Col, Spinner } from 'reactstrap';
+import { Spinner } from 'reactstrap';
 
 const Loader = () => {
-  return (
-    <Col className="text-center">
-      <Spinner size="xl" color="danger" />
-    </Col>
-  );
+  return <Spinner size="xl" color="danger" />;
 };
 
 export default Loader;

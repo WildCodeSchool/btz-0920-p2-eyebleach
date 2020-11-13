@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container } from 'reactstrap';
+import { Row, Container, CardColumns } from 'reactstrap';
 
 import PostPreview from '../Components/PostPreview';
 import TextWelcome from '../Components/TextWelcome';
 import Loader from '../Components/Loader';
+
+import './Home.css';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -18,29 +20,38 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <Container>
-        <Row>
-          <TextWelcome />
+    <Container>
+      <Row>
+        <TextWelcome className="text-responsive cuteKitten" />
+      </Row>
+      <Row className="d-flex justify-content-center px-2-sm">
+        <CardColumns className="cardscolumslayout">
           {loading && <Loader />}
 
           {posts &&
-            posts.map((post) => {
-              // console.log(post.data.permalink.split('/'));
-              return (
-                <PostPreview
-                  id={post.data.permalink.split('/')[4]}
-                  slugTitle={post.data.permalink.split('/')[5]}
-                  title={post.data.title}
-                  url_overridden_by_dest={post.data.url_overridden_by_dest}
-                  author_fullname={post.data.author_fullname}
-                  key={post.data.id}
-                />
-              );
-            })}
-        </Row>
-      </Container>
-    </div>
+            posts
+              .map((post) => {
+                // console.log(post.data.permalink.split('/'));
+                return (
+                  <PostPreview
+                    id={post.data.permalink.split('/')[4]}
+                    slugTitle={post.data.permalink.split('/')[5]}
+                    title={post.data.title}
+                    url_overridden_by_dest={post.data.url_overridden_by_dest}
+                    author={post.data.author}
+                    key={post.data.id}
+                    preview={
+                      // post.data.preview &&
+                      // post.data.preview.reddit_video_preview &&
+                      post.data.preview?.reddit_video_preview?.fallback_url
+                    }
+                  />
+                );
+              })
+              .slice(1, 50)}
+        </CardColumns>
+      </Row>
+    </Container>
   );
 };
 

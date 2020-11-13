@@ -1,9 +1,13 @@
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-function DownloadButton({ imageToDisplay }) {
+function DownloadButton({ contentToDL }) {
   return (
-    <Button color="link" onClick={imageToDisplay}>
+    <Button
+      color="link"
+      // eslint-disable-next-line no-return-assign
+      onClick={() => (window.location.href = { contentToDL })} // not working it's only refreshing the page
+    >
       {/* do a function to download the img when the button is clicked */}
       <svg
         width="1.5em" /* this is the download icon  */
@@ -27,12 +31,12 @@ function DownloadButton({ imageToDisplay }) {
 }
 
 DownloadButton.defaultProps = {
-  imageToDisplay:
+  contentToDL:
     'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
 };
 
 DownloadButton.propTypes = {
-  imageToDisplay: PropTypes.string,
+  contentToDL: PropTypes.string,
 };
 
 export default DownloadButton;

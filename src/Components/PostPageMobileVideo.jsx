@@ -4,9 +4,8 @@ import LikeButton from './LikeButton';
 import DownloadButton from './DownloadButton';
 import InfoPop from './InfoPop';
 
-function PostPageMobilePhoto({
-  imageToDisplay,
-  altForImgToDisplay,
+function PostPageMobileVideo({
+  videoToDisplay,
   userName,
   title,
   redditPostURL,
@@ -17,11 +16,13 @@ function PostPageMobilePhoto({
       <div className="userNamePostMob">
         <p>{userName}</p>
         <LikeButton />
-        <DownloadButton contentToDL={imageToDisplay} />
+        <DownloadButton contentToDL={videoToDisplay} />
       </div>
 
-      <div className="photoDiv">
-        <img src={imageToDisplay} alt={altForImgToDisplay} />
+      <div className="videoDiv">
+        <video controls autoPlay="true" loop width="100%" src={videoToDisplay}>
+          <track default kind="captions" />
+        </video>
       </div>
       <div className="titleDesc">{title}</div>
       <div className="socialIcons">
@@ -31,22 +32,12 @@ function PostPageMobilePhoto({
   );
 }
 
-/* PostPageMobilePhoto.defaultProps = {
-  imageToDisplay:
-    'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
-  altForImgToDisplay: 'petit chien noir qui regarde à droite',
-  userName: 'DefaultUserName',
-  title: 'This is not the title from reddit',
-  redditPostURL: 'https://fr.wikipedia.org/wiki/Erreur_HTTP_404',
-}; */
-
-PostPageMobilePhoto.propTypes = {
-  imageToDisplay: PropTypes.string.isRequired,
-  altForImgToDisplay: PropTypes.string.isRequired,
+PostPageMobileVideo.propTypes = {
   userName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   redditPostURL: PropTypes.string.isRequired,
+  videoToDisplay: PropTypes.string.isRequired,
   comments: PropTypes.number.isRequired,
 };
 
-export default PostPageMobilePhoto;
+export default PostPageMobileVideo;

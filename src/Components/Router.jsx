@@ -23,5 +23,3 @@ const Router = () => {
 };
 
 export default Router;
-
-// https://www.reddit.com/r/Eyebleach/comments/jow622/stop_it_im_trying_to_pose_for_a_picture/
