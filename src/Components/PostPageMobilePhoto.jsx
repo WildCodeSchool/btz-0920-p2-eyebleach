@@ -13,7 +13,7 @@ function PostPageMobilePhoto({
   comments,
 }) {
   return (
-    <div className="mainPostPage">
+    <div className="mainPostPageMobile">
       <div className="userNamePostMob">
         <p>{userName}</p>
         <LikeButton />
@@ -21,7 +21,11 @@ function PostPageMobilePhoto({
       </div>
 
       <div className="photoDiv">
-        <img src={imageToDisplay} alt={altForImgToDisplay} />
+        <img
+          className="imgPost"
+          src={imageToDisplay}
+          alt={altForImgToDisplay}
+        />
       </div>
       <div className="titleDesc">{title}</div>
       <div className="socialIcons">

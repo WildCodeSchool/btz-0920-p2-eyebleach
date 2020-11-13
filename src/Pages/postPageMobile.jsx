@@ -27,7 +27,7 @@ const postPageMobile = (props) => {
   /* console.log(posts, 'this is outside use effect'); */
 
   return (
-    <div>
+    <div className="mainPost">
       {loading && <Loader />}
 
       {posts &&

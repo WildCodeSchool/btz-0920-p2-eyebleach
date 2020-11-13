@@ -12,7 +12,7 @@ function PostPageMobileVideo({
   comments,
 }) {
   return (
-    <div className="mainPostPage">
+    <div className="mainPostPageMobile">
       <div className="userNamePostMob">
         <p>{userName}</p>
         <LikeButton />
