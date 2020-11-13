@@ -1,22 +1,17 @@
 import { useHistory } from 'react-router-dom';
-import {
-  Card,
-  Col,
-  CardTitle,
-  CardText,
-  CardImg,
-  CardImgOverlay,
-} from 'reactstrap';
+import { Card, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+
+import './PostPreview.css';
 
 const PostPreview = ({
   id,
   slugTitle,
   title,
   url_overridden_by_dest,
-  author_fullname,
+  author,
   preview,
 }) => {
   const [isVideo, setIsVideo] = useState(false);
@@ -30,38 +25,34 @@ const PostPreview = ({
   };
 
   return (
-    <Col xs="12" md="6" lg="4" className="py-1">
-      <Card
-        inverse
-        className="d-flex justify-content-center"
-        onClick={goToPage}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        {isVideo && (
-          <video autoPlay="true" loop width="100%" src={preview}>
-            <track default kind="captions" />
-          </video>
-        )}
-        {!isVideo && (
-          <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
-        )}
-        <CardImgOverlay>
-          <CardTitle>{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author_fullname}</small>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
-    </Col>
+    <Card
+      inverse
+      onClick={goToPage}
+      style={{
+        cursor: 'pointer',
+      }}
+    >
+      {isVideo && (
+        <video autoPlay="true" loop width="100%" src={preview}>
+          <track default kind="captions" />
+        </video>
+      )}
+      {!isVideo && (
+        <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
+      )}
+      <CardImgOverlay className="hideinfos d-flex justify-content-end">
+        <CardText>
+          <small className="text-left">{author}</small>
+        </CardText>
+      </CardImgOverlay>
+    </Card>
   );
 };
 
 PostPreview.propTypes = {
   title: PropTypes.string.isRequired,
   url_overridden_by_dest: PropTypes.string.isRequired,
-  author_fullname: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
   preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,

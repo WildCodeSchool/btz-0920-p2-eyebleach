@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container } from 'reactstrap';
+import { Row, Container, CardColumns } from 'reactstrap';
 
 import PostPreview from '../Components/PostPreview';
 import TextWelcome from '../Components/TextWelcome';
 import Loader from '../Components/Loader';
+
+import './Home.css';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -18,22 +20,25 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <Container>
-        <Row>
-          <TextWelcome />
+    <Container>
+      <Row>
+        <TextWelcome className="text-responsive cuteKitten" />
+      </Row>
+      <Row className="d-flex justify-content-center">
+        <CardColumns className="cardscolumslayout">
           {loading && <Loader />}
 
           {posts &&
             posts
               .map((post) => {
+                // console.log(post.data.permalink.split('/'));
                 return (
                   <PostPreview
                     id={post.data.permalink.split('/')[4]}
                     slugTitle={post.data.permalink.split('/')[5]}
                     title={post.data.title}
                     url_overridden_by_dest={post.data.url_overridden_by_dest}
-                    author_fullname={post.data.author}
+                    author={post.data.author}
                     key={post.data.id}
                     preview={
                       // post.data.preview &&
@@ -44,9 +49,9 @@ const Home = () => {
                 );
               })
               .slice(1, 50)}
-        </Row>
-      </Container>
-    </div>
+        </CardColumns>
+      </Row>
+    </Container>
   );
 };
 

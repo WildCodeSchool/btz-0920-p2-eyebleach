@@ -1,0 +1,12 @@
+.cardscolumslayout {
+  display: inline-block;
+  break-inside: avoid;
+}
+
+.cuteKitten {
+  background-image: url(../Images/cuteKitten.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+}
