@@ -10,6 +10,8 @@ import {
 
 import PropTypes from 'prop-types';
 
+import './PostImage.css';
+
 const PostImage = ({
   title,
   url_overridden_by_dest,
@@ -31,6 +33,7 @@ const PostImage = ({
         onClick={goToPage}
         style={{
           cursor: 'pointer',
+          textcolor: 'red',
         }}
       >
         <CardImg
