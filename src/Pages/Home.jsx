@@ -7,6 +7,7 @@ import TextWelcome from '../Components/TextWelcome';
 import Loader from '../Components/Loader';
 
 import './Home.css';
+import cuteKitten from '../Images/cuteKitten.png';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -21,9 +22,12 @@ const Home = () => {
 
   return (
     <Container>
-      <Row>
-        <TextWelcome className="text-responsive cuteKitten" />
-      </Row>
+      <div
+        className="text-responsive cuteKitten"
+        style={{ backgroundImage: `url(${cuteKitten}` }}
+      >
+        <TextWelcome />
+      </div>
       <Row className="d-flex justify-content-center px-2-sm">
         <CardColumns className="cardscolumslayout">
           {loading && <Loader />}
