@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container } from 'reactstrap';
+import { Row, Container, CardColumns } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostImage from '../Components/PostImage';
+import './Home.css';
 
 const ImagesPage = () => {
   const [loading, setLoading] = useState(true);
@@ -17,11 +18,10 @@ const ImagesPage = () => {
   }, []);
 
   return (
-    <div>
-      <Container>
-        <Row>
+    <Container>
+      <Row className="d-flex justify-content-center px-2-sm">
+        <CardColumns className="cardscolumslayout">
           {loading && <Loader />}
-
           {posts &&
             posts
               .filter(
@@ -41,10 +41,11 @@ const ImagesPage = () => {
                     key={post.data.id}
                   />
                 );
-              })}
-        </Row>
-      </Container>
-    </div>
+              })
+              .slice(1, 50)}
+        </CardColumns>
+      </Row>
+    </Container>
   );
 };
 

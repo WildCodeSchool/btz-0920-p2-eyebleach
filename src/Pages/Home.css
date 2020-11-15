@@ -4,9 +4,11 @@
 }
 
 .cuteKitten {
-  background-image: url(../Images/cuteKitten.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top;
-  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 10%;
+}
+
+.NavItem {
+  color: blue;
 }

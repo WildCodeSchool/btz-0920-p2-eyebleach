@@ -13,6 +13,8 @@ import { NavLink as RNV } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 import logoEyebleach from '../Images/logoEyebleach.png';
+import cuteKitten from '../Images/cuteKitten.png';
+import '../Pages/Home.css';
 
 const Navigation = () => {
   const [navLinks] = useState([
@@ -34,7 +36,13 @@ const Navigation = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="light" light expand="sm">
+    <Navbar
+      color="light"
+      light
+      expand="sm"
+      className="cuteKitten"
+      style={{ backgroundImage: `url(${cuteKitten}` }}
+    >
       <NavbarBrand href="#home">
         <a href="/">
           <img src={logoEyebleach} alt="logo" height="70" />
@@ -45,7 +53,7 @@ const Navigation = () => {
         <Nav className="mr-auto" navbar>
           {navLinks.map((item) => {
             return (
-              <NavItem key={item.link}>
+              <NavItem key={item.link} color="dark">
                 <NavLink tag={RNV} to={item.link}>
                   {item.label}
                 </NavLink>
