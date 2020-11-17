@@ -1,5 +1,15 @@
 /* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
+import {
+  Button,
+  Card,
+  CardBody,
+  CardImg,
+  CardSubtitle,
+  CardText,
+  CardTitle,
+  Col,
+} from 'reactstrap';
 import LikeButton from './LikeButton';
 import DownloadButton from './DownloadButton';
 import InfoPop from './InfoPop';
@@ -13,25 +23,29 @@ function PostPageMobilePhoto({
   comments,
 }) {
   return (
-    <div className="mainPostPageMobile">
-      <div className="userNamePostMob">
-        <p>{userName}</p>
-        <LikeButton />
-        <DownloadButton contentToDL={imageToDisplay} />
-      </div>
+    <Col
+      xs={{ size: 12 }}
+      md={{ size: 5 }}
+      lg={{ size: 4 }}
+      xl={{ size: 3 }}
+      className="container-fluid"
+    >
+      <Card>
+        <CardImg src={imageToDisplay} alt={altForImgToDisplay} />
+        <CardBody>
+          <CardTitle tag="h5">{title}</CardTitle>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">
+            u/{userName}
+          </CardSubtitle>
+          <CardText>
+            Some quick example text to build on the card title and make up the
+            bulk of the card content.
+          </CardText>
 
-      <div className="photoDiv">
-        <img
-          className="imgPost"
-          src={imageToDisplay}
-          alt={altForImgToDisplay}
-        />
-      </div>
-      <div className="titleDesc">{title}</div>
-      <div className="socialIcons">
-        <InfoPop comments={comments} redditPostURL={redditPostURL} />
-      </div>
-    </div>
+          <InfoPop comments={comments} redditPostURL={redditPostURL} />
+        </CardBody>
+      </Card>
+    </Col>
   );
 }
 
