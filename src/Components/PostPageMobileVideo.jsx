@@ -20,7 +20,7 @@ function PostPageMobileVideo({
       </div>
 
       <div className="videoDiv">
-        <video autoPlay="true" loop width="100%" src={videoToDisplay}>
+        <video controls autoPlay="true" loop width="100%" src={videoToDisplay}>
           <track default kind="captions" />
         </video>
       </div>
