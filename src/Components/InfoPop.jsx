@@ -8,9 +8,9 @@ function InfoPop({ redditPostURL, comments }) {
 
   const toggle = () => setPopoverOpen(!popoverOpen);
   return (
-    <div>
-      <Button color="info" id="Popover1" type="button">
-        I
+    <div className="w-100 d-flex justify-content-between">
+      <Button color="dark" id="Popover1" type="button">
+        +
       </Button>
       <Popover
         placement="bottom"
