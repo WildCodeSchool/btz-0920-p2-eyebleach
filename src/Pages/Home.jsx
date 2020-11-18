@@ -21,10 +21,11 @@ const Home = () => {
 
   return (
     <Container>
-      <TextWelcome />
-
+      <Row>
+        <TextWelcome className="text-responsive" />
+      </Row>
       <Row className="d-flex justify-content-center">
-        <CardColumns className="cardscolumslayout">
+        <CardColumns className="cardscolumslayout px-3">
           {loading && <Loader />}
 
           {posts &&
