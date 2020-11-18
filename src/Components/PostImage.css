@@ -1,19 +1,19 @@
-CardColumns {
+.hideinfos {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.8s;
+  font-size: 16px;
+  color: #e8e8e8;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.hideinfos:hover {
+  opacity: 1;
 }
 
-.hidetxt {
-  display: none;
-}
-
-.CardImg:hover + .hide {
-  display: block;
-  color: black;
-}
-.Card:hover {
-  color: black;
+.hideinfos div {
+  justify-content: space-between;
 }

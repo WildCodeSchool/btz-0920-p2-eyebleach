@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container } from 'reactstrap';
+import { Container, Row, CardColumns } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostImage from '../Components/PostImage';
+import './ImagesPage.css';
 
 const ImagesPage = () => {
   const [loading, setLoading] = useState(true);
@@ -17,11 +18,10 @@ const ImagesPage = () => {
   }, []);
 
   return (
-    <div>
-      <Container>
-        <Row>
+    <Container>
+      <Row className="d-flex justify-content-center">
+        <CardColumns className="cardscolumslayoutimages">
           {loading && <Loader />}
-
           {posts &&
             posts
               .filter(
@@ -37,14 +37,15 @@ const ImagesPage = () => {
                     slugTitle={post.data.permalink.split('/')[5]}
                     title={post.data.title}
                     url_overridden_by_dest={post.data.url_overridden_by_dest}
-                    author_fullname={post.data.author}
+                    author={post.data.author}
                     key={post.data.id}
                   />
                 );
-              })}
-        </Row>
-      </Container>
-    </div>
+              })
+              .slice(1, 50)}
+        </CardColumns>
+      </Row>
+    </Container>
   );
 };
 

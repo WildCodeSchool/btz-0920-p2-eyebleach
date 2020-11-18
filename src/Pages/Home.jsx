@@ -21,10 +21,9 @@ const Home = () => {
 
   return (
     <Container>
-      <Row>
-        <TextWelcome className="text-responsive cuteKitten" />
-      </Row>
-      <Row className="d-flex justify-content-center px-2-sm">
+      <TextWelcome />
+
+      <Row className="d-flex justify-content-center">
         <CardColumns className="cardscolumslayout">
           {loading && <Loader />}
 
