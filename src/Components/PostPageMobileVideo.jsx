@@ -2,7 +2,6 @@
 import {
   Card,
   CardBody,
-  CardImg,
   CardSubtitle,
   CardText,
   CardTitle,
@@ -23,12 +22,16 @@ function PostPageMobileVideo({
   return (
     <Col
       xs={{ size: 12 }}
-      md={{ size: 5 }}
-      lg={{ size: 4 }}
-      xl={{ size: 3 }}
+      md={{ size: 6 }}
+      lg={{ size: 6 }}
+      xl={{ size: 4 }}
       className="container-fluid"
     >
       <Card>
+        <div className="w-100 d-flex justify-content-between">
+          <LikeButton />
+          <DownloadButton />
+        </div>
         <video controls autoPlay="true" loop width="100%" src={videoToDisplay}>
           <track default kind="captions" />
         </video>

@@ -27,10 +27,14 @@ function PostPageMobilePhoto({
       xs={{ size: 12 }}
       md={{ size: 5 }}
       lg={{ size: 4 }}
-      xl={{ size: 3 }}
+      xl={{ size: 4 }}
       className="container-fluid"
     >
       <Card>
+        <div className="w-100 d-flex justify-content-between">
+          <LikeButton />
+          <DownloadButton />
+        </div>
         <CardImg src={imageToDisplay} alt={altForImgToDisplay} />
         <CardBody>
           <CardTitle tag="h5">{title}</CardTitle>
