@@ -4,7 +4,7 @@ import { Row, Container, CardColumns } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostImage from '../Components/PostImage';
-import './Home.css';
+import './ImagesPage.css';
 
 const ImagesPage = () => {
   const [loading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ const ImagesPage = () => {
                     slugTitle={post.data.permalink.split('/')[5]}
                     title={post.data.title}
                     url_overridden_by_dest={post.data.url_overridden_by_dest}
-                    author_fullname={post.data.author}
+                    author={post.data.author}
                     key={post.data.id}
                   />
                 );

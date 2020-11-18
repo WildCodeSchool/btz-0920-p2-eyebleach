@@ -14,7 +14,7 @@ import { NavLink as RNV } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logoEyebleach from '../Images/logoEyebleach.png';
 import cuteKitten from '../Images/cuteKitten.png';
-import '../Pages/Home.css';
+import './Navigation.css';
 
 const Navigation = () => {
   const [navLinks] = useState([
@@ -53,8 +53,12 @@ const Navigation = () => {
         <Nav className="mr-auto" navbar>
           {navLinks.map((item) => {
             return (
-              <NavItem key={item.link} color="dark">
-                <NavLink tag={RNV} to={item.link}>
+              <NavItem key={item.link}>
+                <NavLink
+                  className="text-dark font-weight-bold"
+                  tag={RNV}
+                  to={item.link}
+                >
                   {item.label}
                 </NavLink>
               </NavItem>

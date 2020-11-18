@@ -31,15 +31,15 @@ const PostImage = ({
       }}
     >
       <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
-      <CardImgOverlay className="hideinfos d-flex align-items-end justify-content-space-around">
-        <CardText>
-          <div className="flex-grow-1">
-            <VscAccount size={18} />
+      <CardImgOverlay className="hideinfos">
+        <CardText className="w-100 d-flex justify-content-between">
+          <div>
+            <VscAccount className="mr-2" size={20} />
             {author}
           </div>
           <div>
-            <BsHeart className="" size={18} />
-            <BiShareAlt size={18} />
+            <BsHeart className="mr-2" size={20} />
+            <BiShareAlt size={20} />
           </div>
         </CardText>
       </CardImgOverlay>
