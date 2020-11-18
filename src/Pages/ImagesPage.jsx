@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container, CardColumns } from 'reactstrap';
+import { Container, Row, CardColumns } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostImage from '../Components/PostImage';
@@ -19,8 +19,8 @@ const ImagesPage = () => {
 
   return (
     <Container>
-      <Row className="d-flex justify-content-center px-2-sm">
-        <CardColumns className="cardscolumslayout">
+      <Row className="d-flex justify-content-center">
+        <CardColumns className="cardscolumslayoutimages">
           {loading && <Loader />}
           {posts &&
             posts

@@ -23,7 +23,7 @@ const Home = () => {
     <Container>
       <TextWelcome />
 
-      <Row className="d-flex justify-content-center px-2-sm">
+      <Row className="d-flex justify-content-center">
         <CardColumns className="cardscolumslayout">
           {loading && <Loader />}
 
