@@ -22,10 +22,10 @@ const Home = () => {
   return (
     <Container>
       <Row>
-        <TextWelcome className="text-responsive cuteKitten" />
+        <TextWelcome className="text-responsive" />
       </Row>
-      <Row className="d-flex justify-content-center px-2-sm">
-        <CardColumns className="cardscolumslayout">
+      <Row className="d-flex justify-content-center">
+        <CardColumns className="cardscolumslayout px-3">
           {loading && <Loader />}
 
           {posts &&

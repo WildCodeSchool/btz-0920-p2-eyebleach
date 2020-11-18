@@ -1,5 +1,7 @@
 import { Col } from 'reactstrap';
 
+import './TextWelcome.css';
+
 const TextWelcome = () => {
   return (
     <Col xs={12} className="py-5">
