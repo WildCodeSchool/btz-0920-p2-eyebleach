@@ -18,9 +18,9 @@ const ImagesPage = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className="mt-5">
       <Row className="d-flex justify-content-center">
-        <CardColumns className="cardscolumslayoutimages">
+        <CardColumns className="cardscolumslayoutimages px-3">
           {loading && <Loader />}
           {posts &&
             posts
