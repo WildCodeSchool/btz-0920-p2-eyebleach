@@ -1,11 +1,13 @@
 import { useHistory } from 'react-router-dom';
-import { Card, Col, CardText, CardImgOverlay } from 'reactstrap';
+import { Card, CardText, CardImgOverlay } from 'reactstrap';
 import { VscAccount } from 'react-icons/vsc';
 import { BsHeart } from 'react-icons/bs';
 import { BiShareAlt } from 'react-icons/bi';
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+
+import './PostVideo.css';
 
 const PostVideo = ({ id, slugTitle, author, preview }) => {
   const [isVideo, setIsVideo] = useState(false);
@@ -22,7 +24,6 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
   };
 
   return (
-    <Col xs="12" md="6" lg="4" className="py-1">
       <Card
         inverse
         className="d-flex justify-content-center"
@@ -36,7 +37,6 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
             <track default kind="captions" />
           </video>
         )}
-
         <CardImgOverlay className="hideinfos">
           <CardText className="w-100 d-flex justify-content-between">
             <div>
@@ -50,7 +50,6 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
           </CardText>
         </CardImgOverlay>
       </Card>
-    </Col>
   );
 };
 
