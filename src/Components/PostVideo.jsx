@@ -24,32 +24,32 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
   };
 
   return (
-      <Card
-        inverse
-        className="d-flex justify-content-center"
-        onClick={goToPage}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        {isVideo && (
-          <video loop width="100%" src={preview}>
-            <track default kind="captions" />
-          </video>
-        )}
-        <CardImgOverlay className="hideinfos">
-          <CardText className="w-100 d-flex justify-content-between">
-            <div>
-              <VscAccount className="mr-2" size={20} />
-              {author}
-            </div>
-            <div>
-              <BsHeart className="mr-2" size={20} />
-              <BiShareAlt size={20} />
-            </div>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
+    <Card
+      inverse
+      className="d-flex justify-content-center"
+      onClick={goToPage}
+      style={{
+        cursor: 'pointer',
+      }}
+    >
+      {isVideo && (
+        <video loop width="100%" src={preview}>
+          <track default kind="captions" />
+        </video>
+      )}
+      <CardImgOverlay className="hideinfos">
+        <CardText className="w-100 d-flex justify-content-between">
+          <div>
+            <VscAccount className="mr-2" size={20} />
+            {author}
+          </div>
+          <div>
+            <BsHeart className="mr-2" size={20} />
+            <BiShareAlt size={20} />
+          </div>
+        </CardText>
+      </CardImgOverlay>
+    </Card>
   );
 };
 
