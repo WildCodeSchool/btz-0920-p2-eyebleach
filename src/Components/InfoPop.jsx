@@ -7,6 +7,7 @@ function InfoPop({ redditPostURL, comments }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   const toggle = () => setPopoverOpen(!popoverOpen);
+
   return (
     <div className="w-100 d-flex justify-content-between">
       <Button color="dark" id="Popover1" type="button">

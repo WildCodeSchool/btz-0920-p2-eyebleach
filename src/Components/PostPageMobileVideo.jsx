@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import {
   Card,
@@ -7,6 +8,7 @@ import {
   CardTitle,
   Col,
 } from 'reactstrap';
+import { VscAccount } from 'react-icons/vsc';
 import PropTypes from 'prop-types';
 import LikeButton from './LikeButton';
 import DownloadButton from './DownloadButton';
@@ -39,6 +41,7 @@ function PostPageMobileVideo({
         <CardBody>
           <CardTitle tag="h5">{title}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">
+            <VscAccount className="mr-1" size={16} />
             u/{userName}
           </CardSubtitle>
           <CardText>

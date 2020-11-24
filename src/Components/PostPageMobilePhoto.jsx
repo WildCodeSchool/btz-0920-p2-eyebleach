@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import {
@@ -10,8 +11,9 @@ import {
   CardTitle,
   Col,
 } from 'reactstrap';
-import LikeButton from './LikeButton';
+import { VscAccount } from 'react-icons/vsc';
 import DownloadButton from './DownloadButton';
+import LikeButton from './LikeButton';
 import InfoPop from './InfoPop';
 
 function PostPageMobilePhoto({
@@ -39,6 +41,7 @@ function PostPageMobilePhoto({
         <CardBody>
           <CardTitle tag="h5">{title}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">
+            <VscAccount className="mr-1" size={16} />
             u/{userName}
           </CardSubtitle>
           <CardText>

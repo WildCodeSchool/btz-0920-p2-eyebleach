@@ -24,7 +24,7 @@ const postPageMobile = (props) => {
       setLoading(false);
     });
   }, []);
-  /* console.log(posts, 'this is outside use effect'); */
+  console.log(posts, 'this is outside use effect');
 
   return (
     <div className="mainPost py-4">
