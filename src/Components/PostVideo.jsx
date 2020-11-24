@@ -10,7 +10,10 @@ import { useEffect, useState } from 'react';
 const PostVideo = ({ id, slugTitle, author, preview }) => {
   const [isVideo, setIsVideo] = useState(false);
   useEffect(() => {
-    if (preview) setIsVideo(preview.split('.').pop() === 'mp4');
+    if (preview)
+      setIsVideo(
+        preview.split('.').pop() === 'mp4' || preview.split('.').pop() === 'gif'
+      );
   }, [preview]);
   const history = useHistory();
 
