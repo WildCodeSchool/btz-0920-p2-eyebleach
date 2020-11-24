@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { VscAccount } from 'react-icons/vsc';
 import { BiShareAlt } from 'react-icons/bi';
 import LikeButtonhp from './LikeButtonhp';
-
 import './PostPreview.css';
 
 const PostPreview = ({
@@ -48,6 +47,8 @@ const PostPreview = ({
           <div>
             <VscAccount className="mr-2" size={20} />
             {author}
+          </div>
+          <div>
             <LikeButtonhp className="mr-2" size={20} />
             <BiShareAlt size={20} />
           </div>

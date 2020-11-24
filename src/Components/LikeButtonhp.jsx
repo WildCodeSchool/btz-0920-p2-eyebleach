@@ -11,11 +11,7 @@ function LikeButtonhp() {
       onClick={() => setLiked(!liked)}
       style={{ color: 'white' }}
     >
-      {liked ? (
-        <BsHeartFill size={20} style={{ fill: 'white' }} />
-      ) : (
-        <BsHeart size={20} />
-      )}
+      {liked ? <BsHeartFill size={20} /> : <BsHeart size={20} />}
     </Button>
   );
 }
