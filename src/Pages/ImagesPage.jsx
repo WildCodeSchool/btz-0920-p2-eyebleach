@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Container, Row, CardColumns } from 'reactstrap';
+import { Container, Row, CardColumns, Col } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostImage from '../Components/PostImage';
-import './ImagesPage.css';
 
 const ImagesPage = () => {
   const [loading, setLoading] = useState(true);
@@ -18,9 +17,12 @@ const ImagesPage = () => {
   }, []);
 
   return (
-    <Container className="mt-5">
+    <Container>
+      <Col xs={12} className="pt-5 pb-2">
+        <h1 className="text-left">All photos</h1>
+      </Col>
       <Row className="d-flex justify-content-center">
-        <CardColumns className="cardscolumslayoutimages px-3">
+        <CardColumns className="px-3">
           {loading && <Loader />}
           {posts &&
             posts
