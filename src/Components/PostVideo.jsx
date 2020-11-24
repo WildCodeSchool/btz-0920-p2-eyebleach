@@ -7,8 +7,6 @@ import { BiShareAlt } from 'react-icons/bi';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-import './PostVideo.css';
-
 const PostVideo = ({ id, slugTitle, author, preview }) => {
   const [isVideo, setIsVideo] = useState(false);
   useEffect(() => {
@@ -26,7 +24,6 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
   return (
     <Card
       inverse
-      className="d-flex justify-content-center"
       onClick={goToPage}
       style={{
         cursor: 'pointer',
@@ -37,6 +34,7 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
           <track default kind="captions" />
         </video>
       )}
+
       <CardImgOverlay className="hideinfos">
         <CardText className="w-100 d-flex justify-content-between">
           <div>
