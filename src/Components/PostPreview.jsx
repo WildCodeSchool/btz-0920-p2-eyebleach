@@ -4,10 +4,8 @@ import { Card, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { VscAccount } from 'react-icons/vsc';
-import { BsHeart } from 'react-icons/bs';
 import { BiShareAlt } from 'react-icons/bi';
-
-import './PostPreview.css';
+import LikeButtonhp from './LikeButtonhp';
 
 const PostPreview = ({
   id,
@@ -44,13 +42,13 @@ const PostPreview = ({
         <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
       <CardImgOverlay className="hideinfos">
-        <CardText className="w-100 d-flex justify-content-between">
+        <CardText className="w-100 d-flex justify-content-between flex-row align-items-baseline">
           <div>
             <VscAccount className="mr-2" size={20} />
             {author}
           </div>
           <div>
-            <BsHeart className="mr-2" size={20} />
+            <LikeButtonhp className="mr-2" size={20} />
             <BiShareAlt size={20} />
           </div>
         </CardText>
