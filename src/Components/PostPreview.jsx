@@ -36,7 +36,7 @@ const PostPreview = ({
       }}
     >
       {isVideo && (
-        <video autoPlay="false" loop width="100%" src={preview}>
+        <video loop width="100%" src={preview}>
           <track default kind="captions" />
         </video>
       )}

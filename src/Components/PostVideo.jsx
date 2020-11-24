@@ -32,7 +32,7 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
         }}
       >
         {isVideo && (
-          <video autoPlay="true" loop width="100%" src={preview}>
+          <video loop width="100%" src={preview}>
             <track default kind="captions" />
           </video>
         )}

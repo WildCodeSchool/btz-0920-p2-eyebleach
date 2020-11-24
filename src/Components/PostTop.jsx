@@ -37,7 +37,7 @@ const PostTop = ({
       }}
     >
       {isVideo && (
-        <video autoPlay="false" loop width="100%" src={preview}>
+        <video loop width="100%" src={preview}>
           <track default kind="captions" />
         </video>
       )}
@@ -68,7 +68,7 @@ PostTop.propTypes = {
   id: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
   preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
-  award: PropTypes.number.isRequired,
+  award: PropTypes.string.isRequired,
 };
 
 export default PostTop;
