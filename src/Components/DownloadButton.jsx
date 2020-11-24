@@ -5,9 +5,11 @@ import { BsCloudDownload } from 'react-icons/bs';
 // eslint-disable-next-line no-unused-vars
 function DownloadButton({ contentToDL }) {
   return (
-    <Button color="link" style={{ color: 'black' }}>
-      <BsCloudDownload size={25} />
-    </Button>
+    <a href={contentToDL} download>
+      <Button color="link" style={{ color: 'black' }}>
+        <BsCloudDownload size={25} />
+      </Button>
+    </a>
   );
 }
 

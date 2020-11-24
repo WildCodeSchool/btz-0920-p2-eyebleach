@@ -20,6 +20,7 @@ function PostPageMobileVideo({
   title,
   redditPostURL,
   comments,
+  totalAwards,
 }) {
   return (
     <Col
@@ -34,7 +35,14 @@ function PostPageMobileVideo({
           <LikeButton />
           <DownloadButton />
         </div>
-        <video controls autoPlay="true" loop width="100%" src={videoToDisplay}>
+        <video
+          controls
+          autoPlay="true"
+          playsInline
+          loop
+          width="100%"
+          src={videoToDisplay}
+        >
           <track default kind="captions" />
         </video>
 
@@ -49,7 +57,11 @@ function PostPageMobileVideo({
             bulk of the card content.
           </CardText>
 
-          <InfoPop comments={comments} redditPostURL={redditPostURL} />
+          <InfoPop
+            comments={comments}
+            redditPostURL={redditPostURL}
+            totalAwards={totalAwards}
+          />
         </CardBody>
       </Card>
     </Col>

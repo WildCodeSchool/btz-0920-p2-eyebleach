@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Popover, PopoverBody } from 'reactstrap';
 import logoReddit from '../logoReddit.png';
 
-function InfoPop({ redditPostURL, comments }) {
+function InfoPop({ redditPostURL, comments, totalAwards }) {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   const toggle = () => setPopoverOpen(!popoverOpen);
@@ -19,7 +21,10 @@ function InfoPop({ redditPostURL, comments }) {
         target="Popover1"
         toggle={toggle}
       >
-        <PopoverBody>{comments} comments on this post</PopoverBody>
+        <PopoverBody>
+          <li style={{ listStyle: 'none' }}>{totalAwards} awards received</li>
+          <li style={{ listStyle: 'none' }}>{comments} comments</li>
+        </PopoverBody>
       </Popover>
       <a
         href={`https://www.reddit.com${redditPostURL}`}

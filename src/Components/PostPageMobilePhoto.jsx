@@ -23,19 +23,21 @@ function PostPageMobilePhoto({
   title,
   redditPostURL,
   comments,
+  totalAwards,
+  contentToDL,
 }) {
   return (
     <Col
       xs={{ size: 12 }}
-      md={{ size: 5 }}
-      lg={{ size: 4 }}
+      md={{ size: 6 }}
+      lg={{ size: 6 }}
       xl={{ size: 4 }}
       className="container-fluid"
     >
       <Card>
         <div className="w-100 d-flex justify-content-between">
           <LikeButton />
-          <DownloadButton />
+          <DownloadButton contentToDL={contentToDL} />
         </div>
         <CardImg src={imageToDisplay} alt={altForImgToDisplay} />
         <CardBody>
@@ -49,7 +51,11 @@ function PostPageMobilePhoto({
             bulk of the card content.
           </CardText>
 
-          <InfoPop comments={comments} redditPostURL={redditPostURL} />
+          <InfoPop
+            comments={comments}
+            redditPostURL={redditPostURL}
+            totalAwards={totalAwards}
+          />
         </CardBody>
       </Card>
     </Col>
