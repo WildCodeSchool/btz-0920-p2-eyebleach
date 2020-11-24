@@ -4,7 +4,6 @@ import { Container, Row, CardColumns, Col } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostImage from '../Components/PostImage';
-import './ImagesPage.css';
 
 const ImagesPage = () => {
   const [loading, setLoading] = useState(true);
@@ -23,7 +22,7 @@ const ImagesPage = () => {
         <h1 className="text-left">All photos</h1>
       </Col>
       <Row className="d-flex justify-content-center">
-        <CardColumns className="cardscolumslayoutimages px-3">
+        <CardColumns className="px-3">
           {loading && <Loader />}
           {posts &&
             posts
