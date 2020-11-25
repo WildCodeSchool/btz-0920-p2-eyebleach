@@ -19,6 +19,7 @@ function PostPageMobileVideo({
   redditPostURL,
   comments,
   totalAwards,
+  loading,
 }) {
   return (
     <Col
@@ -28,40 +29,42 @@ function PostPageMobileVideo({
       xl={{ size: 4 }}
       className="container-fluid"
     >
-      <Card>
-        <div className="w-100 d-flex justify-content-between">
-          <LikeButton />
-          <DownloadButton contentToDL={videoToDisplay} />
-        </div>
-        <video
-          controls
-          autoPlay="true"
-          playsInline
-          loop
-          width="100%"
-          src={videoToDisplay}
-        >
-          <track default kind="captions" />
-        </video>
+      {!loading && (
+        <Card>
+          <div className="w-100 d-flex justify-content-between">
+            <LikeButton />
+            <DownloadButton contentToDL={videoToDisplay} />
+          </div>
+          <video
+            controls
+            autoPlay="true"
+            playsInline
+            loop
+            width="100%"
+            src={videoToDisplay}
+          >
+            <track default kind="captions" />
+          </video>
 
-        <CardBody>
-          <CardTitle tag="h5">{title}</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">
-            <VscAccount className="mr-1" size={16} />
-            u/{userName}
-          </CardSubtitle>
-          <CardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card content.
-          </CardText>
+          <CardBody>
+            <CardTitle tag="h5">{title}</CardTitle>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">
+              <VscAccount className="mr-1" size={16} />
+              u/{userName}
+            </CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card content.
+            </CardText>
 
-          <InfoPop
-            comments={comments}
-            redditPostURL={redditPostURL}
-            totalAwards={totalAwards}
-          />
-        </CardBody>
-      </Card>
+            <InfoPop
+              comments={comments}
+              redditPostURL={redditPostURL}
+              totalAwards={totalAwards}
+            />
+          </CardBody>
+        </Card>
+      )}
     </Col>
   );
 }
@@ -73,6 +76,7 @@ PostPageMobileVideo.propTypes = {
   videoToDisplay: PropTypes.string.isRequired,
   comments: PropTypes.number.isRequired,
   totalAwards: PropTypes.number.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default PostPageMobileVideo;

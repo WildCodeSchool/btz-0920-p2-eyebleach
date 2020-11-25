@@ -16,7 +16,7 @@ import InfoPop from './InfoPop';
 
 function PostPageMobilePhoto({
   imageToDisplay,
-  altForImgToDisplay,
+  loading,
   userName,
   title,
   redditPostURL,
@@ -31,30 +31,33 @@ function PostPageMobilePhoto({
       xl={{ size: 4 }}
       className="container-fluid"
     >
-      <Card>
-        <div className="w-100 d-flex justify-content-between">
-          <LikeButton />
-          <DownloadButton contentToDL={imageToDisplay} />
-        </div>
-        <CardImg src={imageToDisplay} alt={altForImgToDisplay} />
-        <CardBody>
-          <CardTitle tag="h5">{title}</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">
-            <VscAccount className="mr-1" size={16} />
-            u/{userName}
-          </CardSubtitle>
-          <CardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card content.
-          </CardText>
+      {' '}
+      {!loading && (
+        <Card>
+          <div className="w-100 d-flex justify-content-between">
+            <LikeButton />
+            <DownloadButton contentToDL={imageToDisplay} />
+          </div>
+          <CardImg src={imageToDisplay} alt={title} />
+          <CardBody>
+            <CardTitle tag="h5">{title}</CardTitle>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">
+              <VscAccount className="mr-1" size={16} />
+              u/{userName}
+            </CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card content.
+            </CardText>
 
-          <InfoPop
-            comments={comments}
-            redditPostURL={redditPostURL}
-            totalAwards={totalAwards}
-          />
-        </CardBody>
-      </Card>
+            <InfoPop
+              comments={comments}
+              redditPostURL={redditPostURL}
+              totalAwards={totalAwards}
+            />
+          </CardBody>
+        </Card>
+      )}
     </Col>
   );
 }
@@ -70,7 +73,7 @@ function PostPageMobilePhoto({
 
 PostPageMobilePhoto.propTypes = {
   imageToDisplay: PropTypes.string.isRequired,
-  altForImgToDisplay: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
   userName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   redditPostURL: PropTypes.string.isRequired,
