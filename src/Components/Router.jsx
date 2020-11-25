@@ -7,7 +7,6 @@ import VideosPage from '../Pages/VideosPage';
 import TopPage from '../Pages/TopPage';
 import postPageMobile from '../Pages/postPageMobile';
 import Navigation from './Navigation';
-import Footer from './Footer';
 
 const Router = () => {
   return (
@@ -21,7 +20,6 @@ const Router = () => {
         <Route path="/Post/:id/:title" component={postPageMobile} />
       </Switch>
       <ScrollUpButton />
-      <Footer />
     </BrowserRouter>
   );
 };

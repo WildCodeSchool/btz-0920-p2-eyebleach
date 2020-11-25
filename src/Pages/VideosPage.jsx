@@ -5,6 +5,7 @@ import { Row, Container, CardColumns, Col } from 'reactstrap';
 import Loader from '../Components/Loader';
 import PostVideo from '../Components/PostVideo';
 import './VideosPage.css';
+import Footer from '../Components/Footer';
 
 const VideosPage = () => {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ const VideosPage = () => {
               })}
         </CardColumns>
       </Row>
+      {!loading && <Footer />}
     </Container>
   );
 };

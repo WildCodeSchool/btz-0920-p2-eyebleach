@@ -4,6 +4,7 @@ import { Container, Row, CardColumns, Col } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostImage from '../Components/PostImage';
+import Footer from '../Components/Footer';
 
 const ImagesPage = () => {
   const [loading, setLoading] = useState(true);
@@ -47,6 +48,7 @@ const ImagesPage = () => {
               .slice(1, 50)}
         </CardColumns>
       </Row>
+      {!loading && <Footer />}
     </Container>
   );
 };
