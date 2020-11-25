@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container, CardColumns } from 'reactstrap';
+import { Row, Container, CardColumns, Button } from 'reactstrap';
 
 import PostPreview from '../Components/PostPreview';
 import TextWelcome from '../Components/TextWelcome';
 import Loader from '../Components/Loader';
 
 import './Home.css';
-import Footer from '../Components/Footer';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
+  const [onlyMostCommentedPost, setOnlyMostCommentedPost] = useState(false);
+  const [onlyMostUpvotedPost, setOnlyMostUpvotedPost] = useState(false);
 
   useEffect(() => {
     Axios.get('https://www.reddit.com/r/Eyebleach.json').then((res) => {
@@ -31,6 +32,12 @@ const Home = () => {
 
           {posts &&
             posts
+              .filter((post) =>
+                onlyMostCommentedPost ? post.data.num_comments >= 20 : true
+              )
+              .filter((post) =>
+                onlyMostUpvotedPost ? post.data.ups >= 100 : true
+              )
               .filter((post) => post.data.is_gallery !== true)
               .map((post) => {
                 return (
@@ -52,8 +59,13 @@ const Home = () => {
               })
               .slice(1, 50)}
         </CardColumns>
+        <Button onClick={() => setOnlyMostCommentedPost((prev) => !prev)}>
+          {!onlyMostCommentedPost ? 'Most commented' : 'All Post'}
+        </Button>
+        <Button onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}>
+          {!onlyMostUpvotedPost ? 'Most upvoted' : 'All Post'}
+        </Button>
       </Row>
-      {!loading && <Footer />}
     </Container>
   );
 };
