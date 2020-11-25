@@ -26,7 +26,6 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
   return (
     <Card
       inverse
-      className="d-flex justify-content-center"
       onClick={goToPage}
       style={{
         cursor: 'pointer',
