@@ -8,7 +8,6 @@ import { BsHeart } from 'react-icons/bs';
 import { BiShareAlt } from 'react-icons/bi';
 
 import './PostPreview.css';
-import Footer from './Footer';
 
 const PostPreview = ({
   id,
@@ -29,37 +28,34 @@ const PostPreview = ({
   };
 
   return (
-    <div>
-      <Card
-        inverse
-        onClick={goToPage}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        {isVideo && (
-          <video autoPlay="false" loop width="100%" src={preview}>
-            <track default kind="captions" />
-          </video>
-        )}
-        {!isVideo && (
-          <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
-        )}
-        <CardImgOverlay className="hideinfos">
-          <CardText className="w-100 d-flex justify-content-between">
-            <div>
-              <VscAccount className="mr-2" size={20} />
-              {author}
-            </div>
-            <div>
-              <BsHeart className="mr-2" size={20} />
-              <BiShareAlt size={20} />
-            </div>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
-      <Footer />
-    </div>
+    <Card
+      inverse
+      onClick={goToPage}
+      style={{
+        cursor: 'pointer',
+      }}
+    >
+      {isVideo && (
+        <video autoPlay="false" loop width="100%" src={preview}>
+          <track default kind="captions" />
+        </video>
+      )}
+      {!isVideo && (
+        <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
+      )}
+      <CardImgOverlay className="hideinfos">
+        <CardText className="w-100 d-flex justify-content-between">
+          <div>
+            <VscAccount className="mr-2" size={20} />
+            {author}
+          </div>
+          <div>
+            <BsHeart className="mr-2" size={20} />
+            <BiShareAlt size={20} />
+          </div>
+        </CardText>
+      </CardImgOverlay>
+    </Card>
   );
 };
 
