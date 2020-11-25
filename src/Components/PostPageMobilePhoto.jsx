@@ -62,23 +62,25 @@ function PostPageMobilePhoto({
   );
 }
 
-/* PostPageMobilePhoto.defaultProps = {
+PostPageMobilePhoto.defaultProps = {
   imageToDisplay:
     'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
-  altForImgToDisplay: 'petit chien noir qui regarde à droite',
   userName: 'DefaultUserName',
   title: 'This is not the title from reddit',
   redditPostURL: 'https://fr.wikipedia.org/wiki/Erreur_HTTP_404',
-}; */
+  comments: 69,
+  totalAwards: 420,
+  loading: true,
+};
 
 PostPageMobilePhoto.propTypes = {
-  imageToDisplay: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired,
-  userName: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  redditPostURL: PropTypes.string.isRequired,
-  comments: PropTypes.number.isRequired,
-  totalAwards: PropTypes.number.isRequired,
+  imageToDisplay: PropTypes.string,
+  userName: PropTypes.string,
+  title: PropTypes.string,
+  redditPostURL: PropTypes.string,
+  comments: PropTypes.number,
+  totalAwards: PropTypes.number,
+  loading: PropTypes.bool,
 };
 
 export default PostPageMobilePhoto;

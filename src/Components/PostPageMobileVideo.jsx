@@ -37,7 +37,7 @@ function PostPageMobileVideo({
           </div>
           <video
             controls
-            autoPlay="true"
+            autoPlay
             playsInline
             loop
             width="100%"
@@ -69,14 +69,24 @@ function PostPageMobileVideo({
   );
 }
 
+PostPageMobileVideo.defaultProps = {
+  videoToDisplay: 'https://i.imgur.com/d9LWvcE.mp4',
+  userName: 'DefaultUserName',
+  title: 'This is not the title from reddit',
+  redditPostURL: 'https://fr.wikipedia.org/wiki/Erreur_HTTP_404',
+  comments: 69,
+  totalAwards: 420,
+  loading: true,
+};
+
 PostPageMobileVideo.propTypes = {
-  userName: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  redditPostURL: PropTypes.string.isRequired,
-  videoToDisplay: PropTypes.string.isRequired,
-  comments: PropTypes.number.isRequired,
-  totalAwards: PropTypes.number.isRequired,
-  loading: PropTypes.bool.isRequired,
+  userName: PropTypes.string,
+  title: PropTypes.string,
+  redditPostURL: PropTypes.string,
+  videoToDisplay: PropTypes.string,
+  comments: PropTypes.number,
+  totalAwards: PropTypes.number,
+  loading: PropTypes.bool,
 };
 
 export default PostPageMobileVideo;
