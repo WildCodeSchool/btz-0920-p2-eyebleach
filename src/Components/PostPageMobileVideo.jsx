@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import {
   Card,
   CardBody,
@@ -7,6 +6,7 @@ import {
   CardTitle,
   Col,
 } from 'reactstrap';
+import { VscAccount } from 'react-icons/vsc';
 import PropTypes from 'prop-types';
 import LikeButton from './LikeButton';
 import DownloadButton from './DownloadButton';
@@ -18,6 +18,7 @@ function PostPageMobileVideo({
   title,
   redditPostURL,
   comments,
+  totalAwards,
 }) {
   return (
     <Col
@@ -30,15 +31,23 @@ function PostPageMobileVideo({
       <Card>
         <div className="w-100 d-flex justify-content-between">
           <LikeButton />
-          <DownloadButton />
+          <DownloadButton contentToDL={videoToDisplay} />
         </div>
-        <video controls autoPlay="true" loop width="100%" src={videoToDisplay}>
+        <video
+          controls
+          autoPlay="true"
+          playsInline
+          loop
+          width="100%"
+          src={videoToDisplay}
+        >
           <track default kind="captions" />
         </video>
 
         <CardBody>
           <CardTitle tag="h5">{title}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">
+            <VscAccount className="mr-1" size={16} />
             u/{userName}
           </CardSubtitle>
           <CardText>
@@ -46,7 +55,11 @@ function PostPageMobileVideo({
             bulk of the card content.
           </CardText>
 
-          <InfoPop comments={comments} redditPostURL={redditPostURL} />
+          <InfoPop
+            comments={comments}
+            redditPostURL={redditPostURL}
+            totalAwards={totalAwards}
+          />
         </CardBody>
       </Card>
     </Col>
@@ -59,6 +72,7 @@ PostPageMobileVideo.propTypes = {
   redditPostURL: PropTypes.string.isRequired,
   videoToDisplay: PropTypes.string.isRequired,
   comments: PropTypes.number.isRequired,
+  totalAwards: PropTypes.number.isRequired,
 };
 
 export default PostPageMobileVideo;
