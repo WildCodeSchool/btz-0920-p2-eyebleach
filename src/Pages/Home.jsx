@@ -59,13 +59,15 @@ const Home = () => {
               })
               .slice(1, 50)}
         </CardColumns>
+      </Row>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <Button onClick={() => setOnlyMostCommentedPost((prev) => !prev)}>
           {!onlyMostCommentedPost ? 'Most commented' : 'All Post'}
         </Button>
         <Button onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}>
           {!onlyMostUpvotedPost ? 'Most upvoted' : 'All Post'}
         </Button>
-      </Row>
+      </div>
     </Container>
   );
 };
