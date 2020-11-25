@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container, CardColumns } from 'reactstrap';
+import { Row, Container, CardColumns, Col } from 'reactstrap';
 
-import TextWelcome from '../Components/TextWelcome';
 import Loader from '../Components/Loader';
 
 import './Home.css';
@@ -21,9 +20,12 @@ const Home = () => {
 
   return (
     <Container>
-      <Row>
-        <TextWelcome className="text-responsive" />
-      </Row>
+      <Col xs={12} className="pt-5 pb-2">
+        <h1 className="text-left">Top Searches</h1>
+      </Col>
+      <Col xs={12} className="pt-1 pb-3">
+        <p className="text-left">The most popular posts on Eyebleach.</p>
+      </Col>
       <Row className="d-flex justify-content-center">
         <CardColumns className="cardscolumslayout px-3">
           {loading && <Loader />}

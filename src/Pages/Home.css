@@ -26,3 +26,9 @@
     column-count: 3;
   }
 }
+
+@media (max-width: 576px) {
+  .PostPreview {
+    max-height: 60%;
+  }
+}

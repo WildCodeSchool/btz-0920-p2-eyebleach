@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container, CardColumns } from 'reactstrap';
+import { Row, Container, CardColumns, Col } from 'reactstrap';
 
 import Loader from '../Components/Loader';
 import PostVideo from '../Components/PostVideo';
@@ -18,7 +18,10 @@ const VideosPage = () => {
   }, []);
 
   return (
-    <Container className="mt-5">
+    <Container>
+      <Col xs={12} className="pt-5 pb-2">
+        <h1 className="text-left">All videos</h1>
+      </Col>
       <Row className="d-flex justify-content-center">
         <CardColumns className="cardscolumslayoutvideos px-3">
           {loading && <Loader />}
