@@ -15,7 +15,7 @@ const Router = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Photos" component={ImagesPage} />
-        <Route path="/Vidéos" component={VideosPage} />
+        <Route path="/Videos" component={VideosPage} />
         <Route path="/Tops" component={TopPage} />
         <Route path="/Post/:id/:title" component={postPageMobile} />
       </Switch>

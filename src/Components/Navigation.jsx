@@ -43,10 +43,8 @@ const Navigation = () => {
       className="cuteKitten"
       style={{ backgroundImage: `url(${cuteKitten}` }}
     >
-      <NavbarBrand href="#home">
-        <a href="/">
-          <img src={logoEyebleach} alt="logo" height="70" />
-        </a>
+      <NavbarBrand href="/">
+        <img src={logoEyebleach} alt="logo" height="70" />
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
