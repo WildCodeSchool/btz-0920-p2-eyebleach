@@ -32,7 +32,9 @@ const Home = () => {
 
           {posts &&
             posts
+              .filter((post) => post.data.is_gallery !== true)
               .filter((post) => post.data.total_awards_received >= 5)
+              .slice(1, 50)
               .sort((a, b) => {
                 return (
                   b.data.total_awards_received - a.data.total_awards_received
@@ -48,6 +50,7 @@ const Home = () => {
                     author={post.data.author}
                     key={post.data.id}
                     award={post.data.total_awards_received}
+                    is_gallery={post.data.is_gallery}
                     preview={
                       // post.data.preview &&
                       // post.data.preview.reddit_video_preview &&
@@ -55,8 +58,7 @@ const Home = () => {
                     }
                   />
                 );
-              })
-              .slice(1, 50)}
+              })}
         </CardColumns>
       </Row>
     </Container>
