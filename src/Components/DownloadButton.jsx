@@ -13,13 +13,8 @@ function DownloadButton({ contentToDL }) {
   );
 }
 
-DownloadButton.defaultProps = {
-  contentToDL:
-    'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
-};
-
 DownloadButton.propTypes = {
-  contentToDL: PropTypes.string,
+  contentToDL: PropTypes.string.isRequired,
 };
 
 export default DownloadButton;

@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import {
-  Button,
   Card,
   CardBody,
   CardImg,
@@ -24,7 +22,6 @@ function PostPageMobilePhoto({
   redditPostURL,
   comments,
   totalAwards,
-  contentToDL,
 }) {
   return (
     <Col
@@ -37,7 +34,7 @@ function PostPageMobilePhoto({
       <Card>
         <div className="w-100 d-flex justify-content-between">
           <LikeButton />
-          <DownloadButton contentToDL={contentToDL} />
+          <DownloadButton contentToDL={imageToDisplay} />
         </div>
         <CardImg src={imageToDisplay} alt={altForImgToDisplay} />
         <CardBody>
@@ -78,6 +75,7 @@ PostPageMobilePhoto.propTypes = {
   title: PropTypes.string.isRequired,
   redditPostURL: PropTypes.string.isRequired,
   comments: PropTypes.number.isRequired,
+  totalAwards: PropTypes.number.isRequired,
 };
 
 export default PostPageMobilePhoto;

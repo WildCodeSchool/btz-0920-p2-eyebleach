@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import {
   Card,
   CardBody,
@@ -33,7 +31,7 @@ function PostPageMobileVideo({
       <Card>
         <div className="w-100 d-flex justify-content-between">
           <LikeButton />
-          <DownloadButton />
+          <DownloadButton contentToDL={videoToDisplay} />
         </div>
         <video
           controls
@@ -74,6 +72,7 @@ PostPageMobileVideo.propTypes = {
   redditPostURL: PropTypes.string.isRequired,
   videoToDisplay: PropTypes.string.isRequired,
   comments: PropTypes.number.isRequired,
+  totalAwards: PropTypes.number.isRequired,
 };
 
 export default PostPageMobileVideo;

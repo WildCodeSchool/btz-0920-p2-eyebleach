@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Popover, PopoverBody } from 'reactstrap';
@@ -44,6 +42,7 @@ function InfoPop({ redditPostURL, comments, totalAwards }) {
 InfoPop.propTypes = {
   redditPostURL: PropTypes.string.isRequired,
   comments: PropTypes.number.isRequired,
+  totalAwards: PropTypes.number.isRequired,
 };
 
 export default InfoPop;

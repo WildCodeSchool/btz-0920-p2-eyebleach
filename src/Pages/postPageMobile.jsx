@@ -49,7 +49,6 @@ const postPageMobile = (props) => {
             redditPostURL={posts.permalink}
             comments={posts.num_comments}
             totalAwards={posts.total_awards_received}
-            contentToDL={posts.url_overridden_by_dest}
           />
         ))}
     </div>
