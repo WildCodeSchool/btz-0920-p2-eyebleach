@@ -24,7 +24,7 @@ const postPageMobile = (props) => {
       setLoading(false);
     });
   }, []);
-  /* console.log(posts, 'this is outside use effect'); */
+  console.log(posts, 'this is outside use effect');
 
   return (
     <div className="mainPost py-4">
@@ -38,6 +38,7 @@ const postPageMobile = (props) => {
             userName={posts.author}
             redditPostURL={posts.permalink}
             comments={posts.num_comments}
+            totalAwards={posts.total_awards_received}
           />
         ) : (
           <PostPageMobilePhoto
@@ -47,6 +48,7 @@ const postPageMobile = (props) => {
             userName={posts.author}
             redditPostURL={posts.permalink}
             comments={posts.num_comments}
+            totalAwards={posts.total_awards_received}
           />
         ))}
     </div>

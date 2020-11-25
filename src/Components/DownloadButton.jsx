@@ -5,19 +5,16 @@ import { BsCloudDownload } from 'react-icons/bs';
 // eslint-disable-next-line no-unused-vars
 function DownloadButton({ contentToDL }) {
   return (
-    <Button color="link" style={{ color: 'black' }}>
-      <BsCloudDownload size={25} />
-    </Button>
+    <a href={contentToDL} download>
+      <Button color="link" style={{ color: 'black' }}>
+        <BsCloudDownload size={25} />
+      </Button>
+    </a>
   );
 }
 
-DownloadButton.defaultProps = {
-  contentToDL:
-    'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
-};
-
 DownloadButton.propTypes = {
-  contentToDL: PropTypes.string,
+  contentToDL: PropTypes.string.isRequired,
 };
 
 export default DownloadButton;
