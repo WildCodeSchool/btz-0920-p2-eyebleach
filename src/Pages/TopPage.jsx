@@ -33,6 +33,7 @@ const Home = () => {
           {posts &&
             posts
               .filter((post) => post.data.total_awards_received >= 5)
+              .slice(1, 50)
               .sort((a, b) => {
                 return (
                   b.data.total_awards_received - a.data.total_awards_received
@@ -55,8 +56,7 @@ const Home = () => {
                     }
                   />
                 );
-              })
-              .slice(1, 50)}
+              })}
         </CardColumns>
       </Row>
     </Container>
