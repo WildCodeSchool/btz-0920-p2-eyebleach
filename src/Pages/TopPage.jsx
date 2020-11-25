@@ -6,6 +6,7 @@ import Loader from '../Components/Loader';
 
 import './Home.css';
 import PostTop from '../Components/PostTop';
+import Footer from '../Components/Footer';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -61,6 +62,7 @@ const Home = () => {
               })}
         </CardColumns>
       </Row>
+      {!loading && <Footer />}
     </Container>
   );
 };
