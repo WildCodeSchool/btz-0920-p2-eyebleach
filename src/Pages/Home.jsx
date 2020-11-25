@@ -30,8 +30,8 @@ const Home = () => {
 
           {posts &&
             posts
+              .filter((post) => post.data.is_gallery !== true)
               .map((post) => {
-                // console.log(post.data.permalink.split('/'));
                 return (
                   <PostPreview
                     id={post.data.permalink.split('/')[4]}
@@ -40,6 +40,7 @@ const Home = () => {
                     url_overridden_by_dest={post.data.url_overridden_by_dest}
                     author={post.data.author}
                     key={post.data.id}
+                    is_gallery={post.data.is_gallery}
                     preview={
                       // post.data.preview &&
                       // post.data.preview.reddit_video_preview &&
