@@ -23,8 +23,8 @@ const Navigation = () => {
       link: '/Photos',
     },
     {
-      label: 'Vidéos',
-      link: '/Vidéos',
+      label: 'Videos',
+      link: '/Videos',
     },
     {
       label: 'Tops',

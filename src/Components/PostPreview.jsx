@@ -33,6 +33,7 @@ const PostPreview = ({
       onClick={goToPage}
       style={{
         cursor: 'pointer',
+        zIndex: '1',
       }}
     >
       {isVideo && (
@@ -50,7 +51,7 @@ const PostPreview = ({
             {author}
           </div>
           <div>
-            <LikeButtonhp className="mr-2" size={20} />
+            <LikeButtonhp className="mr-2" style={{ zIndex: '3' }} size={20} />
             <BiShareAlt size={20} />
           </div>
         </CardText>
