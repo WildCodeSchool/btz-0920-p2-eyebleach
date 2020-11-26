@@ -45,14 +45,17 @@ const PostTop = ({
         <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
       <CardImgOverlay className="hideinfos">
-        <CardText tag="div" className="w-100 d-flex justify-content-between">
+        <CardText
+          tag="div"
+          className="w-100 d-flex row justify-content-between"
+        >
           <div>
-            <VscAccount className="mr-2" size={20} />
+            <VscAccount className="mr-2 col-3" size={20} />
             {author}
           </div>
           <div>
-            <LikeButtonhp className="mr-2" size={20} />
-            <BiShareAlt size={20} />
+            <LikeButtonhp className="mr-2 col-3" size={20} />
+            <BiShareAlt className="mr-2 col-3" size={20} />
           </div>
           <div>{award}</div>
         </CardText>
