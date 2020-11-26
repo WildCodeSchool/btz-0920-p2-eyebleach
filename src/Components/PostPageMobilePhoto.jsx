@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import {
   Card,
   CardBody,
   CardImg,
   CardSubtitle,
-  CardText,
   CardTitle,
   Col,
 } from 'reactstrap';
@@ -41,14 +39,10 @@ function PostPageMobilePhoto({
           <CardImg src={imageToDisplay} alt={title} />
           <CardBody>
             <CardTitle tag="h5">{title}</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
+            <CardSubtitle tag="h6" className="mb-5 text-muted">
               <VscAccount className="mr-1" size={16} />
               u/{userName}
             </CardSubtitle>
-            <CardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card content.
-            </CardText>
 
             <InfoPop
               comments={comments}
@@ -63,8 +57,7 @@ function PostPageMobilePhoto({
 }
 
 PostPageMobilePhoto.defaultProps = {
-  imageToDisplay:
-    'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
+  imageToDisplay: 'https://via.placeholder.com/300',
   userName: 'DefaultUserName',
   title: 'This is not the title from reddit',
   redditPostURL: 'https://fr.wikipedia.org/wiki/Erreur_HTTP_404',
