@@ -26,6 +26,29 @@ const Home = () => {
       <Row>
         <TextWelcome className="text-responsive" />
       </Row>
+      {!loading && (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '10px',
+          }}
+        >
+          <Button
+            className="mr-2"
+            onClick={() => setOnlyMostCommentedPost((prev) => !prev)}
+          >
+            {!onlyMostCommentedPost ? 'Most commented' : 'All Post'}
+          </Button>
+          <Button
+            className="ml-2"
+            onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}
+          >
+            {!onlyMostUpvotedPost ? 'Most upvoted' : 'All Post'}
+          </Button>
+        </div>
+      )}
+
       <Row className="d-flex justify-content-center">
         <CardColumns className="cardscolumslayout px-3">
           {loading && <Loader />}
@@ -60,14 +83,6 @@ const Home = () => {
               .slice(1, 50)}
         </CardColumns>
       </Row>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <Button onClick={() => setOnlyMostCommentedPost((prev) => !prev)}>
-          {!onlyMostCommentedPost ? 'Most commented' : 'All Post'}
-        </Button>
-        <Button onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}>
-          {!onlyMostUpvotedPost ? 'Most upvoted' : 'All Post'}
-        </Button>
-      </div>
     </Container>
   );
 };
