@@ -19,7 +19,7 @@ const Router = () => {
         <Route path="/Tops" component={TopPage} />
         <Route path="/Post/:id/:title" component={postPageMobile} />
       </Switch>
-      <ScrollUpButton style={{ backgroundColor: '#dc3545', fill: 'white' }} />
+      <ScrollUpButton style={{ backgroundColor: '#dc3545', outline: 'none' }} />
     </BrowserRouter>
   );
 };
