@@ -1,11 +1,11 @@
 import { useHistory } from 'react-router-dom';
 import { Card, CardText, CardImgOverlay } from 'reactstrap';
 import { VscAccount } from 'react-icons/vsc';
-import { BsHeart } from 'react-icons/bs';
 import { BiShareAlt } from 'react-icons/bi';
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import LikeButtonhp from './LikeButtonhp';
 
 const PostVideo = ({ id, slugTitle, author, preview }) => {
   const [isVideo, setIsVideo] = useState(false);
@@ -42,7 +42,7 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
             {author}
           </div>
           <div>
-            <BsHeart className="mr-2" size={20} />
+            <LikeButtonhp className="mr-2" size={20} />
             <BiShareAlt size={20} />
           </div>
         </CardText>

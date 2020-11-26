@@ -1,10 +1,10 @@
 import { useHistory } from 'react-router-dom';
 import { Card, CardText, CardImgOverlay, CardImg } from 'reactstrap';
 import { VscAccount } from 'react-icons/vsc';
-import { BsHeart } from 'react-icons/bs';
 import { BiShareAlt } from 'react-icons/bi';
 
 import PropTypes from 'prop-types';
+import LikeButtonhp from './LikeButtonhp';
 
 import './PostImage.css';
 
@@ -37,7 +37,7 @@ const PostImage = ({
             {author}
           </div>
           <div>
-            <BsHeart className="mr-2" size={20} />
+            <LikeButtonhp className="mr-2" size={20} />
             <BiShareAlt size={20} />
           </div>
         </CardText>
