@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import ScrollUpButton from 'react-scroll-up-button';
+import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 
 import Home from '../Pages/Home';
 import ImagesPage from '../Pages/ImagesPage';
@@ -19,7 +19,7 @@ const Router = () => {
         <Route path="/Tops" component={TopPage} />
         <Route path="/Post/:id/:title" component={postPageMobile} />
       </Switch>
-      <ScrollUpButton style={{ backgroundColor: '#dc3545' }} />
+      <ScrollUpButton style={{ backgroundColor: '#dc3545', fill: 'white' }} />
     </BrowserRouter>
   );
 };
