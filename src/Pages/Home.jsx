@@ -35,12 +35,14 @@ const Home = () => {
           }}
         >
           <Button
+            color="danger"
             className="mr-2"
             onClick={() => setOnlyMostCommentedPost((prev) => !prev)}
           >
             {!onlyMostCommentedPost ? 'Most commented' : 'All Post'}
           </Button>
           <Button
+            color="danger"
             className="ml-2"
             onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}
           >
