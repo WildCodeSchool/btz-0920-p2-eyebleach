@@ -1,0 +1,21 @@
+.cuteKitten {
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 26%;
+}
+
+@media (max-width: 576px) {
+  .cuteKitten {
+    background-repeat: center;
+    background-position: center;
+    background-size: 78%;
+  }
+}
+
+@media (min-width: 992px) {
+  .cuteKitten {
+    background-repeat: center;
+    background-position: center;
+    background-size: 20%;
+  }
+}

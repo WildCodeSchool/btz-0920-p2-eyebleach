@@ -1,20 +1,19 @@
 import { useHistory } from 'react-router-dom';
-import { Card, Col, CardTitle, CardText, CardImgOverlay } from 'reactstrap';
+import { Card, CardText, CardImgOverlay } from 'reactstrap';
+import { VscAccount } from 'react-icons/vsc';
+import { BsHeart } from 'react-icons/bs';
+import { BiShareAlt } from 'react-icons/bi';
 
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const PostVideo = ({
-  id,
-  slugTitle,
-  title,
-  // url_overridden_by_dest,
-  author_fullname,
-  preview,
-}) => {
+const PostVideo = ({ id, slugTitle, author, preview }) => {
   const [isVideo, setIsVideo] = useState(false);
   useEffect(() => {
-    if (preview) setIsVideo(preview.split('.').pop() === 'mp4');
+    if (preview)
+      setIsVideo(
+        preview.split('.').pop() === 'mp4' || preview.split('.').pop() === 'gif'
+      );
   }, [preview]);
   const history = useHistory();
 
@@ -23,43 +22,47 @@ const PostVideo = ({
   };
 
   return (
-    <Col xs="12" md="6" lg="4" className="py-1">
-      <Card
-        inverse
-        className="d-flex justify-content-center"
-        onClick={goToPage}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        {isVideo && (
-          <video autoPlay="true" loop width="100%" src={preview}>
-            <track default kind="captions" />
-          </video>
-        )}
+    <Card
+      inverse
+      onClick={goToPage}
+      style={{
+        cursor: 'pointer',
+      }}
+    >
+      {isVideo && (
+        <video loop width="100%" src={preview}>
+          <track default kind="captions" />
+        </video>
+      )}
 
-        <CardImgOverlay>
-          <CardTitle>{title}</CardTitle>
-          <CardText>
-            <small className="text-muted">{author_fullname}</small>
-          </CardText>
-        </CardImgOverlay>
-      </Card>
-    </Col>
+      <CardImgOverlay className="hideinfos">
+        <CardText tag="div" className="w-100 d-flex justify-content-between">
+          <div>
+            <VscAccount className="mr-2" size={20} />
+            {author}
+          </div>
+          <div>
+            <BsHeart className="mr-2" size={20} />
+            <BiShareAlt size={20} />
+          </div>
+        </CardText>
+      </CardImgOverlay>
+    </Card>
   );
 };
 
+PostVideo.defaultProps = {
+  author: ' ',
+  id: ' ',
+  slugTitle: ' ',
+  preview: ' ',
+};
+
 PostVideo.propTypes = {
-  title: PropTypes.string.isRequired,
-  // url_overridden_by_dest: PropTypes.string.isRequired,
-  author_fullname: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string.isRequired,
-  preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  author: PropTypes.string,
+  id: PropTypes.string,
+  slugTitle: PropTypes.string,
+  preview: PropTypes.string,
 };
 
 export default PostVideo;
-
-/* {!isVideo && (
-    <CardImg width="100%" src={url_overridden_by_dest} alt={title} />
-  )} */

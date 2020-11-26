@@ -13,6 +13,8 @@ import { NavLink as RNV } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 import logoEyebleach from '../Images/logoEyebleach.png';
+import cuteKitten from '../Images/cuteKitten.png';
+import './Navigation.css';
 
 const Navigation = () => {
   const [navLinks] = useState([
@@ -21,8 +23,8 @@ const Navigation = () => {
       link: '/Photos',
     },
     {
-      label: 'Vidéos',
-      link: '/Vidéos',
+      label: 'Videos',
+      link: '/Videos',
     },
     {
       label: 'Tops',
@@ -34,11 +36,15 @@ const Navigation = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="light" light expand="sm">
-      <NavbarBrand href="#home">
-        <a href="/">
-          <img src={logoEyebleach} alt="logo" height="70" />
-        </a>
+    <Navbar
+      color="light"
+      light
+      expand="sm"
+      className="cuteKitten"
+      style={{ backgroundImage: `url(${cuteKitten}` }}
+    >
+      <NavbarBrand className="navbar-left" href="/">
+        <img src={logoEyebleach} alt="logo" height="70" />
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
@@ -46,7 +52,11 @@ const Navigation = () => {
           {navLinks.map((item) => {
             return (
               <NavItem key={item.link}>
-                <NavLink tag={RNV} to={item.link}>
+                <NavLink
+                  className="text-dark font-weight-bold"
+                  tag={RNV}
+                  to={item.link}
+                >
                   {item.label}
                 </NavLink>
               </NavItem>

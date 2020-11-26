@@ -4,7 +4,8 @@ import { Card, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { VscAccount } from 'react-icons/vsc';
-import { BsHeart } from 'react-icons/bs';
+import { BiShareAlt } from 'react-icons/bi';
+import LikeButtonhp from './LikeButtonhp';
 
 import './PostPreview.css';
 
@@ -32,36 +33,54 @@ const PostPreview = ({
       onClick={goToPage}
       style={{
         cursor: 'pointer',
+        position: 'relative',
+        zIndex: '1',
       }}
     >
       {isVideo && (
-        <video autoPlay="true" loop width="100%" src={preview}>
+        <video autoPlay={false} loop width="100%" src={preview}>
           <track default kind="captions" />
         </video>
       )}
       {!isVideo && (
         <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
-      <CardImgOverlay className="hideinfos d-inline-flex align-items-end justify-content-between">
-        <CardText>
-          <VscAccount size={18} />
-          {author}
-        </CardText>
-        <CardText>
-          <BsHeart size={18} />
+      <CardImgOverlay className="hideinfos">
+        <CardText tag="div" className="w-100 d-flex justify-content-between">
+          <div>
+            <VscAccount className="mr-2" size={20} />
+            {author}
+          </div>
+          <div>
+            <LikeButtonhp
+              className="mr-2"
+              style={{ zIndex: '10', position: 'relative' }}
+              size={20}
+            />
+            <BiShareAlt size={20} />
+          </div>
         </CardText>
       </CardImgOverlay>
     </Card>
   );
 };
 
+PostPreview.defaultProps = {
+  title: ' ',
+  url_overridden_by_dest: ' ',
+  author: ' ',
+  id: ' ',
+  slugTitle: ' ',
+  preview: ' ',
+};
+
 PostPreview.propTypes = {
-  title: PropTypes.string.isRequired,
-  url_overridden_by_dest: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string.isRequired,
-  preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  title: PropTypes.string,
+  url_overridden_by_dest: PropTypes.string,
+  author: PropTypes.string,
+  id: PropTypes.string,
+  slugTitle: PropTypes.string,
+  preview: PropTypes.string,
 };
 
 export default PostPreview;

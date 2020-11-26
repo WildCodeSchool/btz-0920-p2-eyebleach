@@ -4,6 +4,11 @@
   transition: 0.8s;
   font-size: 16px;
   color: #e8e8e8;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .hideinfos:hover {
   opacity: 1;

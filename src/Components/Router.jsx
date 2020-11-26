@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ScrollUpButton from 'react-scroll-up-button';
 
 import Home from '../Pages/Home';
 import ImagesPage from '../Pages/ImagesPage';
@@ -14,10 +15,11 @@ const Router = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Photos" component={ImagesPage} />
-        <Route path="/Vidéos" component={VideosPage} />
+        <Route path="/Videos" component={VideosPage} />
         <Route path="/Tops" component={TopPage} />
         <Route path="/Post/:id/:title" component={postPageMobile} />
       </Switch>
+      <ScrollUpButton />
     </BrowserRouter>
   );
 };
