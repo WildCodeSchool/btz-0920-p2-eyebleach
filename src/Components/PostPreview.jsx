@@ -27,7 +27,6 @@ const PostPreview = ({
     history.push(`/Post/${id}/${slugTitle}`);
   };
 
-  /* console.log(preview, 'this preview'); */
   return (
     <Card
       inverse

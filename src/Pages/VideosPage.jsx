@@ -43,8 +43,6 @@ const VideosPage = () => {
                     author={post.data.author}
                     key={post.data.id}
                     preview={
-                      // post.data.preview &&
-                      // post.data.preview.reddit_video_preview &&
                       post.data.preview?.reddit_video_preview?.fallback_url
                     }
                   />

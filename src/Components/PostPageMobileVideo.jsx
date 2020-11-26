@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-  Col,
-} from 'reactstrap';
+import { Card, CardBody, CardSubtitle, CardTitle, Col } from 'reactstrap';
 import { VscAccount } from 'react-icons/vsc';
 import PropTypes from 'prop-types';
 import LikeButton from './LikeButton';
@@ -48,14 +41,10 @@ function PostPageMobileVideo({
 
           <CardBody>
             <CardTitle tag="h5">{title}</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
+            <CardSubtitle tag="h6" className="mb-5 text-muted">
               <VscAccount className="mr-1" size={16} />
               u/{userName}
             </CardSubtitle>
-            <CardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card content.
-            </CardText>
 
             <InfoPop
               comments={comments}

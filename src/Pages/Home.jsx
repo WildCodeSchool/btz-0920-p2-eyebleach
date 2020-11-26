@@ -73,8 +73,6 @@ const Home = () => {
                     key={post.data.id}
                     is_gallery={post.data.is_gallery}
                     preview={
-                      // post.data.preview &&
-                      // post.data.preview.reddit_video_preview &&
                       post.data.preview?.reddit_video_preview?.fallback_url
                     }
                   />
