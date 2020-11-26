@@ -6,7 +6,6 @@ import Loader from '../Components/Loader';
 
 import './Home.css';
 import PostTop from '../Components/PostTop';
-import Footer from '../Components/Footer';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -53,8 +52,6 @@ const Home = () => {
                     award={post.data.total_awards_received}
                     is_gallery={post.data.is_gallery}
                     preview={
-                      // post.data.preview &&
-                      // post.data.preview.reddit_video_preview &&
                       post.data.preview?.reddit_video_preview?.fallback_url
                     }
                   />
@@ -62,7 +59,6 @@ const Home = () => {
               })}
         </CardColumns>
       </Row>
-      {!loading && <Footer />}
     </Container>
   );
 };
