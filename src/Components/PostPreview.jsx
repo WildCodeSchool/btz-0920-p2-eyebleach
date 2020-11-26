@@ -41,7 +41,7 @@ const PostPreview = ({
           loop
           width="100%"
           src={preview}
-          className="mb-n2"
+          className="mb-sm-n2"
         >
           <track default kind="captions" />
         </video>

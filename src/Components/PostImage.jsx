@@ -31,7 +31,10 @@ const PostImage = ({
     >
       <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       <CardImgOverlay className="hideinfos">
-        <CardText tag="div" className="w-100 d-flex justify-content-between">
+        <CardText
+          tag="div"
+          className="w-100 d-flex justify-content-between align-items-baseline"
+        >
           <div>
             <VscAccount className="mr-2" size={20} />
             {author}
