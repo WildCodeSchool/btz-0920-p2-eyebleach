@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
+import ScrollUpButton from 'react-scroll-up-button';
 
 import Home from '../Pages/Home';
 import ImagesPage from '../Pages/ImagesPage';
