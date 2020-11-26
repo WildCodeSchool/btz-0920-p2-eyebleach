@@ -5,7 +5,6 @@ import { Row, Container, CardColumns, Col } from 'reactstrap';
 import Loader from '../Components/Loader';
 import PostVideo from '../Components/PostVideo';
 import './VideosPage.css';
-import Footer from '../Components/Footer';
 
 const VideosPage = () => {
   const [loading, setLoading] = useState(true);
@@ -44,8 +43,6 @@ const VideosPage = () => {
                     author={post.data.author}
                     key={post.data.id}
                     preview={
-                      // post.data.preview &&
-                      // post.data.preview.reddit_video_preview &&
                       post.data.preview?.reddit_video_preview?.fallback_url
                     }
                   />
@@ -53,7 +50,6 @@ const VideosPage = () => {
               })}
         </CardColumns>
       </Row>
-      {!loading && <Footer />}
     </Container>
   );
 };

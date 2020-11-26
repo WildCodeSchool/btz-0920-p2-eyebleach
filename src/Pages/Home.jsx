@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Row, Container, CardColumns } from 'reactstrap';
+import { Row, Container, CardColumns, Button } from 'reactstrap';
 
 import PostPreview from '../Components/PostPreview';
 import TextWelcome from '../Components/TextWelcome';
 import Loader from '../Components/Loader';
 
 import './Home.css';
-import Footer from '../Components/Footer';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [posts, setPosts] = useState([]);
+  const [onlyMostCommentedPost, setOnlyMostCommentedPost] = useState(false);
+  const [onlyMostUpvotedPost, setOnlyMostUpvotedPost] = useState(false);
 
   useEffect(() => {
     Axios.get('https://www.reddit.com/r/Eyebleach.json').then((res) => {
@@ -25,12 +26,43 @@ const Home = () => {
       <Row>
         <TextWelcome className="text-responsive" />
       </Row>
+      {!loading && (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '10px',
+          }}
+        >
+          <Button
+            color="danger"
+            className="mr-2"
+            onClick={() => setOnlyMostCommentedPost((prev) => !prev)}
+          >
+            {!onlyMostCommentedPost ? 'Most commented' : 'All Post'}
+          </Button>
+          <Button
+            color="danger"
+            className="ml-2"
+            onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}
+          >
+            {!onlyMostUpvotedPost ? 'Most upvoted' : 'All Post'}
+          </Button>
+        </div>
+      )}
+
       <Row className="d-flex justify-content-center">
         <CardColumns className="cardscolumslayout px-3">
           {loading && <Loader />}
 
           {posts &&
             posts
+              .filter((post) =>
+                onlyMostCommentedPost ? post.data.num_comments >= 20 : true
+              )
+              .filter((post) =>
+                onlyMostUpvotedPost ? post.data.ups >= 100 : true
+              )
               .filter((post) => post.data.is_gallery !== true)
               .map((post) => {
                 return (
@@ -43,8 +75,6 @@ const Home = () => {
                     key={post.data.id}
                     is_gallery={post.data.is_gallery}
                     preview={
-                      // post.data.preview &&
-                      // post.data.preview.reddit_video_preview &&
                       post.data.preview?.reddit_video_preview?.fallback_url
                     }
                   />
@@ -53,7 +83,6 @@ const Home = () => {
               .slice(1, 50)}
         </CardColumns>
       </Row>
-      {!loading && <Footer />}
     </Container>
   );
 };

@@ -2,7 +2,6 @@ import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { BsCloudDownload } from 'react-icons/bs';
 
-// eslint-disable-next-line no-unused-vars
 function DownloadButton({ contentToDL }) {
   return (
     <a href={contentToDL} download>
