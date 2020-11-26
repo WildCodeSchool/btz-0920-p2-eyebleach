@@ -67,12 +67,12 @@ const PostPreview = ({
 };
 
 PostPreview.defaultProps = {
-  title: 'Default Title',
-  url_overridden_by_dest:
-    'https://pbs.twimg.com/profile_images/636823510539702272/kL6h_Jhj.jpg',
-  author: 'Basile',
-  id: '69420',
-  slugTitle: 'Vernouillet',
+  title: ' ',
+  url_overridden_by_dest: ' ',
+  author: ' ',
+  id: ' ',
+  slugTitle: ' ',
+  preview: ' ',
 };
 
 PostPreview.propTypes = {
@@ -81,7 +81,7 @@ PostPreview.propTypes = {
   author: PropTypes.string,
   id: PropTypes.string,
   slugTitle: PropTypes.string,
-  preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  preview: PropTypes.string,
 };
 
 export default PostPreview;
