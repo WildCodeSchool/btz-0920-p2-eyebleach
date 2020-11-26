@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { VscAccount } from 'react-icons/vsc';
 import { BiShareAlt } from 'react-icons/bi';
+import { BsAward } from 'react-icons/bs';
 import LikeButtonhp from './LikeButtonhp';
 
 import './PostPreview.css';
@@ -54,7 +55,10 @@ const PostTop = ({
             <LikeButtonhp className="mr-2" size={20} />
             <BiShareAlt size={20} />
           </div>
-          <div>{award}</div>
+          <div>
+            <BsAward className="mr-2" size={20} />
+            {award}
+          </div>
         </CardText>
       </CardImgOverlay>
     </Card>
