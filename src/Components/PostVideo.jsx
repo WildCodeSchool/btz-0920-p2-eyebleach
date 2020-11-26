@@ -36,7 +36,7 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
       )}
 
       <CardImgOverlay className="hideinfos">
-        <CardText className="w-100 d-flex justify-content-between">
+        <CardText tag="div" className="w-100 d-flex justify-content-between">
           <div>
             <VscAccount className="mr-2" size={20} />
             {author}
@@ -51,11 +51,18 @@ const PostVideo = ({ id, slugTitle, author, preview }) => {
   );
 };
 
+PostVideo.defaultProps = {
+  author: ' ',
+  id: ' ',
+  slugTitle: ' ',
+  preview: ' ',
+};
+
 PostVideo.propTypes = {
-  author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string.isRequired,
-  preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  author: PropTypes.string,
+  id: PropTypes.string,
+  slugTitle: PropTypes.string,
+  preview: PropTypes.string,
 };
 
 export default PostVideo;
