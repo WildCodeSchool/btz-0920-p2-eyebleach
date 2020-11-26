@@ -7,6 +7,15 @@ import {
   CardTitle,
   Col,
 } from 'reactstrap';
+
+import {
+  FacebookShareButton,
+  RedditShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  RedditIcon,
+  TwitterIcon,
+} from 'react-share';
 import { VscAccount } from 'react-icons/vsc';
 import DownloadButton from './DownloadButton';
 import LikeButton from './LikeButton';
@@ -20,6 +29,7 @@ function PostPageMobilePhoto({
   redditPostURL,
   comments,
   totalAwards,
+  postPageMobile,
 }) {
   return (
     <Col
@@ -50,6 +60,15 @@ function PostPageMobilePhoto({
               totalAwards={totalAwards}
             />
           </CardBody>
+          <FacebookShareButton url={`${postPageMobile}`} hashtag="#eyebleach">
+            <FacebookIcon size={36} />
+          </FacebookShareButton>
+          <TwitterShareButton>
+            <TwitterIcon size={36} />
+          </TwitterShareButton>
+          <RedditShareButton>
+            <RedditIcon size={36} />
+          </RedditShareButton>
         </Card>
       )}
     </Col>
@@ -64,6 +83,7 @@ PostPageMobilePhoto.defaultProps = {
   comments: 69,
   totalAwards: 420,
   loading: true,
+  postPageMobile: '',
 };
 
 PostPageMobilePhoto.propTypes = {
@@ -71,6 +91,7 @@ PostPageMobilePhoto.propTypes = {
   userName: PropTypes.string,
   title: PropTypes.string,
   redditPostURL: PropTypes.string,
+  postPageMobile: PropTypes.string,
   comments: PropTypes.number,
   totalAwards: PropTypes.number,
   loading: PropTypes.bool,
