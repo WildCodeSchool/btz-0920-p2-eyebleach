@@ -38,7 +38,7 @@ const PostPreview = ({
       }}
     >
       {isVideo && (
-        <video autoPlay="false" loop width="100%" src={preview}>
+        <video autoPlay={false} loop width="100%" src={preview}>
           <track default kind="captions" />
         </video>
       )}
@@ -46,7 +46,7 @@ const PostPreview = ({
         <CardImg top width="100%" src={url_overridden_by_dest} alt={title} />
       )}
       <CardImgOverlay className="hideinfos">
-        <CardText className="w-100 d-flex justify-content-between">
+        <CardText tag="div" className="w-100 d-flex justify-content-between">
           <div>
             <VscAccount className="mr-2" size={20} />
             {author}
@@ -65,13 +65,22 @@ const PostPreview = ({
   );
 };
 
+PostPreview.defaultProps = {
+  title: ' ',
+  url_overridden_by_dest: ' ',
+  author: ' ',
+  id: ' ',
+  slugTitle: ' ',
+  preview: ' ',
+};
+
 PostPreview.propTypes = {
-  title: PropTypes.string.isRequired,
-  url_overridden_by_dest: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string.isRequired,
-  preview: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  title: PropTypes.string,
+  url_overridden_by_dest: PropTypes.string,
+  author: PropTypes.string,
+  id: PropTypes.string,
+  slugTitle: PropTypes.string,
+  preview: PropTypes.string,
 };
 
 export default PostPreview;

@@ -26,6 +26,31 @@ const Home = () => {
       <Row>
         <TextWelcome className="text-responsive" />
       </Row>
+      {!loading && (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '10px',
+          }}
+        >
+          <Button
+            color="btn btn-outline-danger"
+            className="mr-2 mb-4"
+            onClick={() => setOnlyMostCommentedPost((prev) => !prev)}
+          >
+            {!onlyMostCommentedPost ? 'Most commented' : 'All Posts'}
+          </Button>
+          <Button
+            color="btn btn-outline-danger"
+            className="ml-2 mb-4"
+            onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}
+          >
+            {!onlyMostUpvotedPost ? 'Most upvoted' : 'All Posts'}
+          </Button>
+        </div>
+      )}
+
       <Row className="d-flex justify-content-center">
         <CardColumns className="cardscolumslayout px-3">
           {loading && <Loader />}
@@ -50,8 +75,6 @@ const Home = () => {
                     key={post.data.id}
                     is_gallery={post.data.is_gallery}
                     preview={
-                      // post.data.preview &&
-                      // post.data.preview.reddit_video_preview &&
                       post.data.preview?.reddit_video_preview?.fallback_url
                     }
                   />
@@ -60,14 +83,6 @@ const Home = () => {
               .slice(1, 50)}
         </CardColumns>
       </Row>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <Button onClick={() => setOnlyMostCommentedPost((prev) => !prev)}>
-          {!onlyMostCommentedPost ? 'Most commented' : 'All Post'}
-        </Button>
-        <Button onClick={() => setOnlyMostUpvotedPost((prev) => !prev)}>
-          {!onlyMostUpvotedPost ? 'Most upvoted' : 'All Post'}
-        </Button>
-      </div>
     </Container>
   );
 };
