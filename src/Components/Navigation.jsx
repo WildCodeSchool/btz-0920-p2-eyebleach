@@ -56,6 +56,7 @@ const Navigation = () => {
                   className="text-dark font-weight-bold"
                   tag={RNV}
                   to={item.link}
+                  style={{ fontSize: 20 }}
                 >
                   {item.label}
                 </NavLink>

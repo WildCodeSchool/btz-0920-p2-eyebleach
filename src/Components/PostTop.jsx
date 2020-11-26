@@ -4,8 +4,8 @@ import { Card, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { VscAccount } from 'react-icons/vsc';
-import { BsHeart } from 'react-icons/bs';
 import { BiShareAlt } from 'react-icons/bi';
+import LikeButtonhp from './LikeButtonhp';
 
 import './PostPreview.css';
 
@@ -37,7 +37,7 @@ const PostTop = ({
       }}
     >
       {isVideo && (
-        <video autoPlay loop width="100%" src={preview}>
+        <video loop width="100%" src={preview} className="mb-n2">
           <track default kind="captions" />
         </video>
       )}
@@ -51,7 +51,7 @@ const PostTop = ({
             {author}
           </div>
           <div>
-            <BsHeart className="mr-2" size={20} />
+            <LikeButtonhp className="mr-2" size={20} />
             <BiShareAlt size={20} />
           </div>
           <div>{award}</div>
