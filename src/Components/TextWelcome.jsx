@@ -1,5 +1,4 @@
 import { Col } from 'reactstrap';
-
 import './TextWelcome.css';
 
 const TextWelcome = () => {
@@ -12,4 +11,5 @@ const TextWelcome = () => {
     </Col>
   );
 };
+
 export default TextWelcome;
