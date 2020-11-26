@@ -39,16 +39,17 @@ const postPageMobile = (props) => {
             redditPostURL={posts.permalink}
             comments={posts.num_comments}
             totalAwards={posts.total_awards_received}
+            loading={loading}
           />
         ) : (
           <PostPageMobilePhoto
             title={posts.title}
             imageToDisplay={posts.url_overridden_by_dest}
-            altForImgToDisplay={posts.title}
             userName={posts.author}
             redditPostURL={posts.permalink}
             comments={posts.num_comments}
             totalAwards={posts.total_awards_received}
+            loading={loading}
           />
         ))}
     </div>
