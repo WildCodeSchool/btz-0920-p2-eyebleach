@@ -46,7 +46,7 @@ const Navigation = () => {
       <NavbarBrand className="navbar-left" href="/">
         <img src={logoEyebleach} alt="logo" height="70" />
       </NavbarBrand>
-      <NavbarToggler onClick={toggle} />
+      <NavbarToggler style={{ outline: 'none' }} onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           {navLinks.map((item) => {
