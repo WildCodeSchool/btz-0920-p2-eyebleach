@@ -19,7 +19,7 @@ function PostPageMobileVideo({
       xs={{ size: 12 }}
       md={{ size: 6 }}
       lg={{ size: 6 }}
-      xl={{ size: 4 }}
+      xl={{ size: 5 }}
       className="container-fluid"
     >
       {!loading && (

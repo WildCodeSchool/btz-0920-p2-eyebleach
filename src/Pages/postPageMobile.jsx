@@ -25,7 +25,10 @@ const postPageMobile = (props) => {
 
   return (
     <div className="mainPost py-4">
-      {loading && <Loader />}
+      <div className="d-flex justify-content-center">
+        {' '}
+        {loading && <Loader />}{' '}
+      </div>
 
       {posts &&
         (video ? (
