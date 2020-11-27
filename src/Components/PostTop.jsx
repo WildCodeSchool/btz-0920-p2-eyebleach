@@ -38,7 +38,7 @@ const PostTop = ({
       }}
     >
       {isVideo && (
-        <video loop width="100%" src={preview} className="mb-sm-n2">
+        <video autoPlay loop width="100%" src={preview} className="mb-sm-n2">
           <track default kind="captions" />
         </video>
       )}
